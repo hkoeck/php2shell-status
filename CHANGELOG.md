@@ -2,6 +2,16 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
+## Update 17 – 22 Oct 2026, 20:19 UTC
+
+Completes the re-check: update 16 had skipped section 2 (WAF/IPS/scanners), BSI and several stable rows. All of them are now re-read; fast-moving sources checked again around 20:15 UTC.
+
+- **New since update 16:** Citrix plans NetScaler fixes for **27 Oct 2026**; CloudLinux native OS php now **fixed in stable for every affected version** (19:50 UTC); Fortinet moved FortiADC, FortiADC Manager, FortiEndpoint, FortiSIEM, FortiMonitor to *not impacted*; Barracuda moved WAF/ADC, WaaS, Vulnerability Manager to *not affected* and added Firewall Insights, Message Archiver; Pantheon resolved, Acquia restored all services; Fedora 43/45 builds in testing
+- **Key facts:** public PoCs exist (Rapid7: multiple, none broadly reliable; BSI v1.2: PoC public; CCCS; Imunify360: exploit tool requests reached 3,600+ servers by 21 Oct 11:00 UTC). Still not in KEV, SSVC still "none"
+- **Corrections:** BSI notice is BITS-H 2026-297981-1232 v1.2 (was given as …-1132 v1.1); A10 latest advisory is from 30 Sep 2025 (not Mar 2025); Progress WS_FTP article no longer mentions exposed older versions; Qualys QID 5019895 no longer listed; Talos SIDs 67359/67360/67375 all in Community Ruleset; Imunify360 row now sourced (it had no provenance entry) and notes that no rule covers the OOM path yet
+- **Verified now:** sury php8.0 `8.0.30-25` changelog contains the backport; Progress LoadMaster KB 000307378; DirectAdmin note on PHP 8.1 build failures
+- Check Point's automatic mitigation is announced for before 22 Oct 21:00 GMT; not yet re-checked after that time
+
 ## Update 16 – 22 Oct 2026, 15:33 UTC
 
 Re-sweep of sections 1 and 3–7 (section 2 WAF/IPS content and BSI not re-read), focused on vendors without a statement. Method change: searched each vendor's **support/KB portal for the CVE ID**, not only PSIRT/advisory indexes; used the NCSC-NL list as a lead source.

@@ -162,6 +162,27 @@
 | AlmaLinux, CIQ, CERT-EU, CCCS, NCSC-UK, Freexian ELTS unchanged | respective pages | 15:32–15:33 | raw | Alma "2026-10-21 21:15 UTC: … now in production"; CIQ "RLC Pro 9, Pro 10, Pro 8, LTS 8.6, and CIQ Bridge are pending"; CERT-EU "21/10/2026 --- v1.1"; CCCS "a Proof of Concept (PoC) is available, with no active exploitation being identified at this time" |
 | KEV / SSVC unchanged | CISA KEV JSON, cveawg.mitre.org | 15:27 | JSON | catalogVersion 2026.10.21, 0 matches; SSVC Exploitation=none (21 Oct 14:34Z) |
 
+## Update 17 checks (22 Oct 2026)
+
+| Claim | Source | Checked (UTC) | Method | Evidence (verbatim / exact) |
+|---|---|---|---|---|
+| Section 2 re-read | Cloudflare blog, Azure WAF blog, Google blog, Imperva, Unit 42, Talos, Fortinet TS 6551, CPAI-2026-15172, Trend KA, AWS bulletin | 15:51–15:56 | raw | Cloudflare "Starting on October 21 3:02 am UTC"; Azure "99006001 … disabled. Customers need to enable the rule", "expected to complete by 28 October 2026"; Fortinet TS "virtual patches … released in version 37.316"; CPAI "Protection Provided by: Security Gateway R82, R81, R80, R77, R75"; Talos "signatures 67359, 67360, and 67375. These rules are also available in the Community Ruleset"; Trend 1012749/48514/6021 present; AWS SizeRestrictions_BODY present |
+| Rapid7 PoCs | rapid7.com ETR blog (last updated Oct 22) | 15:51 | raw | "Multiple public proof-of-concept (PoC) exploits … are now available"; "none appears to be broadly reliable" |
+| Qualys QIDs | blog.qualys.com (last updated October 22) | 20:13 | raw | QIDs 389102, 39033, 5019896, 6056502 …; 5019895 absent |
+| Imunify360 | blog.imunify360.com/php-cve-2026-109618-cve-2026-109619/ | 20:13 | raw | "last updated 22 October 2026, 14:31 UTC"; "No rule blocks the out-of-memory path of CVE-2026-109618 yet"; "its requests had reached more than 3,600 servers" |
+| BSI v1.2 | BSI PDF | 15:52 | pdftotext | "BITS-H Nr. 2026-297981-1232, Version 1.2, 22.10.2026"; "Kritikalität*: 3 / Orange"; "Proof-of-Concept öffentlich"; "noch keine bestätigten Ausnutzungen" |
+| Ubuntu, Plesk, cPanel, DirectAdmin, Fedora, Docker, Remi, sury | USN-8948-1/-2, Ubuntu CVE page, Plesk Zendesk API, cPanel EA4 changelog, DA forum, Bodhi JSON, Docker Hub API, Remi repoview, sury Packages + changelog | 15:51–15:53 | raw / JSON | Ubuntu CVE page all "Fixed"; Plesk updated_at 2026-10-22T13:41:25Z; cPanel 25.92 = ea-nodejs only; DA staff "PHP 8.1 does not build cleanly on some systems"; Bodhi FEDORA-2026-d5f8446449 php-8.4.27-2.fc43 testing, FEDORA-2026-a9354b8a1e php-8.5.12-1.fc45 testing; sury php8.0 changelog "Backported from 8.2.35 + [CVE-2026-109618, CVE-2026-109619]" |
+| A10 | support.a10networks.com/support/security-advisories | 15:54 | browser (headless) | top entry "TACACS+ LOGIN VULNERABILITY– A10-2025-0034 September 30, 2025" |
+| Progress | community.progress.com KB 000307376, 000307378 | 15:55 | browser (headless) | WS_FTP: "not affected … as neither uses PHP" (Last Modified 10/22/2026 11:52 AM); LoadMaster etc.: "do not use PHP in any of their respective product components" |
+| Feeds re-check | RH VEX, SUSE, PAN JSON, Rocky API, Oracle, ALAS, KEV, SSVC, Debian, NCSC-NL | 20:14 | JSON / raw | unchanged; RH VEX current_release_date 2026-10-22T05:04:37Z; KEV 2026.10.21 |
+| CloudLinux native fixed | cloudlinux.statuspage.io API | 20:14 | JSON | 2026-10-22T19:50:16Z: "Fixed native PHP packages … are now in the stable channel for every affected version" |
+| Fortinet moved products | FG-IR-26-186 | 20:14 | raw | Under investigation: "FortiDDoS FortiDDoS-F FortiClient Cloud Services FortiSOAR FortiSOAR PaaS"; NOT Impacted includes FortiADC, FortiADC Manager, FortiEndpoint, FortiSIEM, FortiMonitor, FortiDLP |
+| Pantheon / Acquia | status APIs | 20:14 | JSON | Pantheon status resolved 2026-10-22T09:36:36-07:00; Acquia 18:29Z "restored all services" |
+| Headless re-check | Check Point sk1000302, QNAP, Synology, Cisco, F5, Broadcom | 20:16 | browser (headless) | unchanged (CP Last Modified 2026-10-22; QNAP "V1.0 (October 22, 2026) - Published", all Fixing; Cisco v1.2 14:13 GMT) |
+| Citrix fix date | Citrix Tech Zone r1640 | 20:17 | browser (headed) | "Citrix plans to release fixes … for all supported NetScaler software versions on October 27, 2026."; "Last updated on: October 22, 2026" |
+| Barracuda changes, KACE, Sophos, SonicWall | respective pages | 20:17–20:18 | browser (headed) | Barracuda WAF/ADC, WaaS, Vulnerability Manager "Not affected"; Firewall Insights, Message Archiver "Under investigation"; KACE "Letzte Aktualisierung am: 10/22/2026", no patch; Sophos v4; SonicWall SNWLID-2026-0018 (NSM, 14 Oct) unrelated |
+| Ivanti, Juniper | hub.ivanti.com search, supportportal.juniper.net search "CVE-2026-109618" | 20:18 | browser (headed) | Ivanti: only ISM KB public; Juniper: no results |
+
 ## Fetch log (raw downloads)
 
 | UTC | name | HTTP | bytes | URL |
