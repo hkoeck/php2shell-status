@@ -157,6 +157,9 @@
 | Red Hat VEX unchanged | CSAF VEX | 15:27 | JSON | current_release_date 2026-10-22T05:04:37Z; RHEL 9 php:8.4 still known_affected |
 | Alpine all fixed | pkgs.alpinelinux.org | 15:27 | raw | v3.22 php82 8.2.35-r0 (2026-10-22 13:35:10), php84 8.4.27-r0 (12:27:15); v3.23 php84 8.4.27-r0 (09:46:26) |
 | Debian / Amazon unchanged | security-tracker.debian.org, explore.alas.aws.amazon.com | 15:27 | raw | forky 8.4.26-1 vulnerable; AL2 php "No Fix Planned" |
+| Heroku runtimes | devcenter.heroku.com/changelog-items/3845 | 15:32 | raw | "PHP updates - October 2026 (CVE-2026-109618 and CVE-2026-109619)"; "Change effective on 21 October 2026"; "PHP 8.1.34 on the Heroku-22 stack has been rebuilt with the PHP project’s backported fix" |
+| WP Engine: could not check | wpenginestatus.com | 15:32 | raw | "doesn't work properly without JavaScript enabled" |
+| AlmaLinux, CIQ, CERT-EU, CCCS, NCSC-UK, Freexian ELTS unchanged | respective pages | 15:32–15:33 | raw | Alma "2026-10-21 21:15 UTC: … now in production"; CIQ "RLC Pro 9, Pro 10, Pro 8, LTS 8.6, and CIQ Bridge are pending"; CERT-EU "21/10/2026 --- v1.1"; CCCS "a Proof of Concept (PoC) is available, with no active exploitation being identified at this time" |
 | KEV / SSVC unchanged | CISA KEV JSON, cveawg.mitre.org | 15:27 | JSON | catalogVersion 2026.10.21, 0 matches; SSVC Exploitation=none (21 Oct 14:34Z) |
 
 ## Fetch log (raw downloads)

@@ -3,7 +3,7 @@
 > [!WARNING]
 > **AI-generated content.** This document was researched and written by an AI assistant (Claude, Anthropic). Statements were checked against the raw text of the linked primary source (HTML/JSON/PDF, not summaries) **except where marked as not verified**; provenance is logged in [VERIFICATION.md](VERIFICATION.md). It may still contain errors and goes stale quickly. **Always verify against the vendor source before acting.** No warranty.
 
-**Status:** 22 October 2026, 15:31 UTC (update 16). Full re-sweep: every row re-checked 15:10–15:28 UTC on 22 Oct 2026, except A10, Progress, Netgate/OPNsense, Plesk/cPanel/DirectAdmin, Ubuntu, Remi/sury, Fedora, Docker (last read in updates 12–14, 06:13–11:13 UTC).
+**Status:** 22 October 2026, 15:33 UTC (update 16). Re-checked 15:10–15:33 UTC on 22 Oct 2026: all rows in sections 1, 3, 4, 5 and 6 and section 7 (CISA, NCSC-NL, NCSC-UK, CERT-EU, CCCS), except A10, Progress, Plesk/cPanel/DirectAdmin, Ubuntu, Remi/sury, Fedora, Docker. **Not re-read in this update:** section 2 (WAF/IPS/scanner content, except the new Check Point and Sophos entries) and BSI; those rows date from updates 12–14 (06:13–11:13 UTC).
 
 ## Key facts
 
@@ -112,7 +112,7 @@ Fix type: *new upstream* = rebased to 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12; *backpo
 | **Microsoft Azure** | **App Service on Linux** ([App Service blog](https://azure.github.io/AppService/2026/10/21/php-critical-security-release-app-service-linux.html), upd. 21 Oct): "completed the rollout of the updated built-in PHP images" to the **Standard and Latest** Platform Release Channels: PHP 8.2 → `8.2.35`, 8.3 → `8.3.36`, 8.4 → `8.4.27`. Extended channel: move away; EOL PHP versions and custom containers are not patched. WordPress on App Service updated except older Alpine-based images. Azure WAF: section 2 |
 | **Docker Official Image `php`** | Rebuilt 21 Oct (Docker Hub, 18:58–22:07 UTC) with 8.5.12 / 8.4.27 / 8.3.36 / 8.2.35. Derived images (WordPress, Nextcloud, own images) must be rebuilt |
 | Red Hat images | Hardened Images fixed (RHSA-2026:87414); OpenShift Dev Spaces `udi-rhel9` affected |
-| **PHP PaaS** (primary status pages) | **Pantheon** ([incident](https://status.pantheon.io/incidents/x7h8z1yhgvml), 22 Oct 02:08 UTC): all live, LTS, SFTP-mode and pre-production environments patched, free/sandbox "over the next 24-48 hours"; network mitigations "blocked over 60,000 suspicious requests". **Upsun / Platform.sh** ([status](https://status.upsun.com/)): grid regions patched 21 Oct 23:35 UTC, Dedicated clusters 22 Oct 04:12 UTC. **Acquia** ([status](https://status.acquia.com/), 22 Oct 07:48 UTC): "All Acquia customer applications have been patched"; Campaign Studio still being restored (14:16 UTC). **Scalingo** ([SSB-2026-005](https://doc.scalingo.com/security/bulletins/ssb-2026-005)): fixed versions available, **rebuild and redeploy** required; router blocks multipart requests for all PHP apps until further notice |
+| **PHP PaaS** (primary status pages) | **Pantheon** ([incident](https://status.pantheon.io/incidents/x7h8z1yhgvml), 22 Oct 02:08 UTC): all live, LTS, SFTP-mode and pre-production environments patched, free/sandbox "over the next 24-48 hours"; network mitigations "blocked over 60,000 suspicious requests". **Upsun / Platform.sh** ([status](https://status.upsun.com/)): grid regions patched 21 Oct 23:35 UTC, Dedicated clusters 22 Oct 04:12 UTC. **Acquia** ([status](https://status.acquia.com/), 22 Oct 07:48 UTC): "All Acquia customer applications have been patched"; Campaign Studio still being restored (14:16 UTC). **Heroku** ([changelog 3845](https://devcenter.heroku.com/changelog-items/3845), effective 21 Oct): runtimes `8.2.35`, `8.3.36`, `8.4.27`, `8.5.12`; PHP 8.1.34 on Heroku-22 rebuilt with the backported fix; **redeploy** to pick them up. **Scalingo** ([SSB-2026-005](https://doc.scalingo.com/security/bulletins/ssb-2026-005)): fixed versions available, **rebuild and redeploy** required; router blocks multipart requests for all PHP apps until further notice |
 
 ## 5. Monitoring and IT automation
 
@@ -160,7 +160,7 @@ NCSC-NL also lists Nagios Fusion, Centreon and Zabbix as "vulnerable when deploy
 
 ## Known gaps (not verified)
 
-Could not be read from the primary source: **Ivanti Connect Secure / Policy Secure / vADC / ZTA KB** (login required), Heroku and WP Engine PaaS runtime status (no primary page found), Adobe Commerce (no Adobe statement found; only partner blogs), TuxCare ELS details beyond CloudLinux. **No vendor statement yet** (checked 22 Oct): Juniper, HPE/Aruba (official), A10, SonicWall, Zscaler (only a ThreatLabz blog), Siemens, Nagios, Icinga, Cacti, LibreNMS. Absence of a vendor statement does not mean a product is not affected.
+Could not be read from the primary source: **Ivanti Connect Secure / Policy Secure / vADC / ZTA KB** (login required), WP Engine (status page is JavaScript-only; not checked in a browser), Adobe Commerce (no Adobe statement found; only partner blogs), TuxCare ELS details beyond CloudLinux. **No vendor statement yet** (checked 22 Oct): Juniper, HPE/Aruba (official), A10, SonicWall, Zscaler (only a ThreatLabz blog), Siemens, Nagios, Icinga, Cacti, LibreNMS. Absence of a vendor statement does not mean a product is not affected.
 
 ## Checking whether you are patched
 

@@ -2,15 +2,15 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
-## Update 16 – 22 Oct 2026, 15:31 UTC
+## Update 16 – 22 Oct 2026, 15:33 UTC
 
-Full re-sweep of every row, focused on vendors without a statement. Method change: searched each vendor's **support/KB portal for the CVE ID**, not only PSIRT/advisory indexes; used the NCSC-NL list as a lead source.
+Re-sweep of sections 1 and 3–7 (section 2 WAF/IPS content and BSI not re-read), focused on vendors without a statement. Method change: searched each vendor's **support/KB portal for the CVE ID**, not only PSIRT/advisory indexes; used the NCSC-NL list as a lead source.
 
 - **Newly found vendor statements (previously "no statement"):** Citrix NetScaler **affected** (Tech Zone post by NetScaler Product Security; NSIP/SNIP/Cluster IP GUI, no fix yet); **Quest KACE** SMA/SDA **affected** (KB 4385046, no patch); **QNAP** QSA-26-18 **affected**, fixing; **Synology** SA-26:14 **resolved** (PHP 7.3 no fix); **Broadcom/VMware** KB 459989: VCF not affected; **Ivanti** Service Manager / Neurons ITSM/ITAM not impacted (KB 000109782); **Azure App Service** Linux images patched (Standard/Latest channels); **Zabbix** statement pr912
 - **Corrections:** Ivanti "Assessment-and-…" article was about Apache Tomcat, not PHP; Icinga: NCSC-NL's cited post does not mention the CVEs; HPE community reply is a personal post, not an official statement
 - **Updated:** Cisco v1.2 (Meraki, Splunk added under investigation; BPA, CPS, PCF, SMI not vulnerable); Fortinet (FortiPortal not impacted, FortiGuard dropped, OT IPS refs); Sophos v4 (IPS signatures); Trend (exposure tool); Checkmk 2.3.0p51; Rocky RL8 php:8.2 (RLSA-2026:87073); Oracle Linux 9 php:8.2/8.3 and OL8 php:8.2; Alpine 3.22/3.23 all fixed; HestiaCP bullseye; KEV/SSVC unchanged; NCSC-NL last commit
-- **Added:** PHP PaaS row (Pantheon, Upsun, Acquia, Scalingo), Nextcloud (AIO v14.4.1), ISPConfig, aaPanel, Gentoo GLSA 202610-02
-- **Not verified:** Ivanti Connect Secure KB (login), Heroku, WP Engine, Adobe Commerce
+- **Added:** PHP PaaS row (Pantheon, Upsun, Acquia, Heroku, Scalingo), Nextcloud (AIO v14.4.1), ISPConfig, aaPanel, Gentoo GLSA 202610-02
+- **Not verified:** Ivanti Connect Secure KB (login), WP Engine (JS-only status page), Adobe Commerce (no Adobe statement found)
 
 ## Update 15 – 22 Oct 2026, 15:16 UTC
 
