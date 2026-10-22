@@ -109,6 +109,10 @@
 - **CERT-EU:** [Security Advisory 2026-018](https://cert.europa.eu/publications/security-advisories/2026-018/)
 - **Canada CCCS:** [AL26-026](https://www.cyber.gc.ca/en/alerts-advisories/al26-026-critical-vulnerabilities-impacting-php-cve-2026-109618-cve-2026-109619) (21 Oct)
 
+## Known gaps (not verified)
+
+Could not be read from the primary source at the time of checking: Sophos advisory (site unreachable), Ivanti KB (login), Broadcom, Akamai, A10, Barracuda, Progress, Alpine aports, Azure App Service runtime patching, QNAP/Synology (NCSC-NL only), TuxCare ELS details (NCSC-NL only). Absence of a vendor statement does not mean a product is not affected.
+
 ## Checking whether you are patched
 
 With backports, `php -v` keeps showing the old version. Check package versions or changelogs:
@@ -124,6 +128,13 @@ dnf list --updates --refresh --repo remi-modular
 
 Restart PHP-FPM after updating; for mod_php do a full Apache restart. Rebuild container images; updating the host does not update PHP inside an image.
 
+## Fork it and keep it current with an AI
+
+1. Fork: click **Fork** on GitHub, or `gh repo fork hkoeck/php2shell-status --clone`.
+2. Open the fork in an AI coding assistant with shell and web access (e.g. Claude Code) and give it the prompt from [UPDATE_PROMPT.md](UPDATE_PROMPT.md). Fill in the placeholders: the products to add, or "update everything".
+3. Review the diff. Every changed claim needs a matching row in [VERIFICATION.md](VERIFICATION.md) with source, UTC time and a verbatim quote. Spot-check a few against the vendor pages yourself.
+4. Commit, push, optionally open a pull request back here.
+
 ## Sources
 
 PHP: [GHSA-w8hw-w9fx-j79w](https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w) (109618), [GHSA-6wmf-4rv5-p3rp](https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp) (109619) ·
@@ -132,18 +143,6 @@ Scanners: [Tenable](https://www.tenable.com/blog/php2shell-cve-2026-109618-cve-2
 Distros: [Debian](https://security-tracker.debian.org/tracker/CVE-2026-109618), [Freexian ELTS](https://deb.freexian.com/extended-lts/tracker/CVE-2026-109618), [Ubuntu](https://ubuntu.com/security/CVE-2026-109618), [Red Hat CVE](https://access.redhat.com/security/cve/cve-2026-109618) / [CSAF VEX](https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-109618.json), [Rocky errata](https://errata.rockylinux.org/), [Amazon ALAS](https://explore.alas.aws.amazon.com/CVE-2026-109618.html), [Fedora Bodhi](https://bodhi.fedoraproject.org/updates/FEDORA-2026-a9eba4bbc3), [Remi EL9 repoview](https://rpms.remirepo.net/enterprise/9/modular/x86_64/repoview/php-fpm.html) ·
 Vendor and platform links are in the tables above.
 
-## Changes in update 12
+---
 
-- **Enterprise focus:** new sections for WAF/IPS/scanner content, cloud platforms and government advisories; hosting panels, NAS and hobby distros condensed into section 5
-- **Exploitation status rewritten** from primary sources (Amazon: first attempt 17 Oct, broad exploitation; Cloudflare: attack traffic observed). CISA KEV/SSVC, NVD and the BSI notice added
-- **New vendors / platforms:** Citrix (portal notice), Ivanti (login-gated KB), WatchGuard (not affected), Zscaler (assessing), Siemens, Microsoft Azure WAF, Imperva, Cloudflare, AWS WAF, Cloud Armor, Tenable/Qualys/Rapid7; Freexian ELTS fixes
-- **Palo Alto:** added PAN's own scoring (CVSS-B 8.7, availability only) and scope (mgmt UI/XML API only)
-- **Red Hat:** status now from the official CSAF VEX; added RHSA-2026:87073 (RHEL 8 php:8.2) and :87414 (Hardened Images); RHEL 9 php:8.4 affected without fix
-- **Rocky Linux community fixed** (RLSAs from 22 Oct ~00:05 UTC). The earlier "pending" status applied only to CIQ RLC Pro
-- **Own errors from update 11 corrected:**
-  - SUSE patch name `…-2026-4844` from the original PDF was correct and is restored
-  - The PDF's "minimal source backports for 7.4, 8.0, 8.1" was correct (CERT-EU)
-  - Unit 42 only reports PoC, not exploitation in the wild
-  - Wrong check timestamps fixed
-  - Unverified DirectAdmin "7.3 and older not patched" removed
-- **Still not verified:** Sophos advisory (site unreachable), Ivanti KB (login), Broadcom, Akamai, A10, Barracuda, Progress, Alpine aports, Azure App Service runtime patching, QNAP/Synology (NCSC-NL only), TuxCare ELS details (NCSC-NL only)
+History of changes: [CHANGELOG.md](CHANGELOG.md)
