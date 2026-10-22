@@ -2,6 +2,15 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
+## Update 18 – 22 Oct 2026, 20:33 UTC
+
+Full re-check of all 93 linked sources (20:21–20:33 UTC) with an automated claim check (each row's key strings searched in the fresh source text), plus a new search for vendor statements (NCSC-NL commits since 11:00 UTC, web search, vendor support portals).
+
+- **New vendor statements:** **HPE ClearPass affected** (HPESBNW05171; 6.14.1 / 6.11.16 only partial fix, full fix in development); **SonicWall** product notice (no PHP in SonicOS, SMA 1000, NSM, ES, CSE, UM, WNM; switches/APs under evaluation); **N-able** (Take Control, N-sight, Mail Assure, Passportal patched; rest not affected); **Zscaler** ruled out impact on production; Synology press statement (affected packages list, DSM internal PHP patch later); Laravel Cloud/Forge/Vapor, Kinsta added; FreePBX (forum only)
+- **Changed:** watchTowr now reports observed in-the-wild exploitation (not only attempts); Cloudflare rules renamed ("PHP Remote Code Execution Attack" #1–#7); Google revised Cloud Armor guidance (File Upload + RFI categories, oversized-body rule); Fedora 43 fixed; Pantheon "persistent but limited probing"
+- **Unchanged (verified):** Red Hat, AlmaLinux, Rocky, Oracle, SUSE, Ubuntu, Debian/ELTS, Amazon, Alpine, Remi, Plesk (upd. 17:44 UTC, same content), cPanel, DirectAdmin, CloudLinux, F5, PAN, Cisco, Fortinet, Barracuda, Sophos, Trend, WatchGuard, Netgate, OPNsense, KACE, Citrix (fix 27 Oct), QNAP, Broadcom, Progress, Akamai, Imperva, Azure, AWS, Checkmk, Zabbix, Centreon, GLPI, BSI, CERT-EU, CCCS, KEV, SSVC, NVD
+- Correction: HPE moved out of "nothing found"; SonicWall's PSIRT list was the wrong place to look (statement is a support notice)
+
 ## Update 17 – 22 Oct 2026, 20:19 UTC
 
 Completes the re-check: update 16 had skipped section 2 (WAF/IPS/scanners), BSI and several stable rows. All of them are now re-read; fast-moving sources checked again around 20:15 UTC.

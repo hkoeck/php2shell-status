@@ -183,6 +183,25 @@
 | Barracuda changes, KACE, Sophos, SonicWall | respective pages | 20:17–20:18 | browser (headed) | Barracuda WAF/ADC, WaaS, Vulnerability Manager "Not affected"; Firewall Insights, Message Archiver "Under investigation"; KACE "Letzte Aktualisierung am: 10/22/2026", no patch; Sophos v4; SonicWall SNWLID-2026-0018 (NSM, 14 Oct) unrelated |
 | Ivanti, Juniper | hub.ivanti.com search, supportportal.juniper.net search "CVE-2026-109618" | 20:18 | browser (headed) | Ivanti: only ISM KB public; Juniper: no results |
 
+## Update 18 checks (22 Oct 2026)
+
+| Claim | Source | Checked (UTC) | Method | Evidence (verbatim / exact) |
+|---|---|---|---|---|
+| All 93 README sources | see /tmp index (curl + browser) | 20:21–20:33 | raw / JSON / browser | automated check: all claimed key strings present except the changes listed below; Nagios/Icinga still no CVE mention |
+| HPE ClearPass affected | support.hpe.com hpesbnw05171en_us (lead: HPE community post 22 Oct) | 20:31 | browser (headed) | "CPPM 6.14.0 and below / CPPM 6.11.15 and below"; "partially mitigates the vulnerabilities in question by moving them from an unauthenticated vulnerability to an authenticated vulnerability requiring cluster-admin privileges"; "HPE Mist Networking products are not impacted"; "Version:1 (rev.1) - 22 October 2026" |
+| SonicWall notice | sonicwall.com/support/notices/…kA1VN000002YKw10AG | 20:31 | browser (headed) | "found no use of PHP in the following products"; "2026-10-22 8:17 AM PDT: … SonicWall PSIRT is currently evaluating Switches and Access Points (SonicWave)" |
+| N-able | n-able.com blog (Cloudflare challenge; headed) | 20:29 | browser (headed) | "Update October 22, 2026 11 AM EDT We have completed patching for the following products"; "All other products are not affected." |
+| Zscaler | zscaler.com ThreatLabz blog | 20:31 | browser (headed) | "has ruled out any impact to the production environment" |
+| Synology statement | synology.com press release | 20:32 | raw | "limited to systems running certain PHP-dependent packages"; "scheduled a patch for a subsequent DSM release" |
+| Laravel / Kinsta | laravel.com/blog/php-critical-vulnerability-response-updates; status.kinsta.com API | 20:27 | raw / JSON | Laravel "Updated 10/22 - 13:25 UTC"; Kinsta resolved 2026-10-22T08:26:44Z "All sites are protected" |
+| FreePBX | community.freepbx.org topic 110401 (.json) | 20:32 | JSON | no Sangoma advisory; staff (penguinpbx) posts only |
+| watchTowr exploitation | watchtowr.com FAQ | 20:23 | raw | "watchTowr has observed exploitation of both CVE-2026-109618 and CVE-2026-109619 in the wild." |
+| Cloudflare rule names | blog.cloudflare.com | 20:23 | raw | "PHP Remote Code Execution Attack (CVE-2026-109618, CVE-2026-109619) #7 07f0b6ddaabf40b1b2042dade8d613fa"; "Anomalous Execution" no longer present |
+| Google Cloud Armor | cloud.google.com blog | 20:23 | raw | "updated on Oct. 22, 2026 at 9:25 a.m. PDT, with revised guidance on Cloud Armor"; "enable the File Upload and RFI categories" |
+| Fedora 43 | bodhi API | 20:26 | JSON | FEDORA-2026-d5f8446449 stable 2026-10-22 16:40:54 php-8.4.27-2.fc43 |
+| Plesk | Zendesk API article 44397729587351 | 20:26 | JSON | updated_at 2026-10-22T17:44:23Z; fix table unchanged |
+| A10, Siemens | A10 advisory list; Siemens CSAF feed | 20:33 | browser / JSON | A10 top A10-2025-0034; Siemens feed updated 2026-10-19 |
+
 ## Fetch log (raw downloads)
 
 | UTC | name | HTTP | bytes | URL |
