@@ -110,6 +110,14 @@
 | Barracuda advisory | trust.barracuda.com/security/php-vulnerabilities | 11:12 | browser (headed) | product table verbatim (Not affected / Under investigation) |
 | Progress KB | community.progress.com search | 11:12 | browser (headed) | titles: "LoadMaster is not affected by CVE-2026-109618 and CVE-2026-109619"; MOVEit: "No action or remediation is required"; WS_FTP: "supported WS_FTP Server and Professional versions are not affected … previous supported versions were exposed" (search snippets of the KB articles) |
 
+## Update 15 checks (22 Oct 2026)
+
+| Claim | Source | Checked (UTC) | Method | Evidence (verbatim / exact) |
+|---|---|---|---|---|
+| Check Point affected, fix date, mitigation | support.checkpoint.com/results/sk/sk1000302 | 15:10 | browser (headless), `innerText` + hidden sections via `textContent` | "Affected Versions: R81.20, R82, R82.10, R82.20 / R80, R80.10, R80.20, R80.30, R80.40, R81, R81.10 (all EoS) / Spark Firewalls R81.10.x, R82.00.x / Spark Firewalls R77.20.x, R80.20.x (all EoS)"; "Check Point Portal and SaaS services are already patched"; "Check Point will release an automatic mitigation through the Automatic Updates mechanism before October, 22, 2026 at 21:00 GMT"; "The fix is planned for the release on November 11, 2026, as part of the Jumbo Hotfix Accumulators."; "Date Created 2026-10-21 Last Modified 2026-10-22" |
+| SUSE LTSS / SAP fixed | suse.com/security/cve/CVE-2026-109618.html and -109619.html (identical status tables) | 15:12 / 15:15 | raw HTML | "SUSE Linux Enterprise Server 15 SP6-LTSS :: php8 >= 8.2.35-150600.3.39.1"; "SUSE Linux Enterprise Server 15 SP4-LTSS :: php8 >= 8.0.30-150400.4.80.1"; "php7 >= 7.4.33-150400.4.81.1"; patchnames `SUSE-SLE-Product-SLES-15-SP4-LTSS-2026-4852`, `…-4853`, `SUSE-SLE-Product-SLES-15-SP6-LTSS-2026-4843`, `SUSE-SLE-Module-Legacy-15-SP7-2026-4853`; 16.0/16.1 "In progress"; "Overall state of this security issue: Pending" |
+| CloudLinux native php partial | cloudlinux.statuspage.io incident zl0vt1yq3dj5 (`/api/v2/incidents.json`) | 15:12 | JSON API | update 2026-10-22T09:21:46Z: "The fixed builds for the other native versions are not in stable yet. They are in the beta channel (updates-testing), and a gradual rollout has delivered them to about 0.2% of servers so far."; 05:23Z: "The native PHP 7.3 fix for CloudLinux 8 is still being prepared."; alt-php "(in stable since 21 October, 21:48 UTC)" |
+
 ## Fetch log (raw downloads)
 
 | UTC | name | HTTP | bytes | URL |

@@ -2,6 +2,13 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
+## Update 15 – 22 Oct 2026, 15:20 UTC
+
+- **Check Point: correction.** The row said "No product statement"; Check Point published [sk1000302](https://support.checkpoint.com/results/sk/sk1000302) on 21 Oct in its support KB (not on the IPS advisory site that was checked). Firewall web portals (Mobile Access, SNX, SAML Remote Access, Identity Awareness Captive Portal) on R80–R82.20 and Spark are **affected**; fix planned for 11 Nov 2026; automatic mitigation announced for before 22 Oct 21:00 GMT; manual `cp-httpd.conf` mitigation documented
+- **SUSE:** SLES 15 SP4/SP5/SP6 LTSS, SLES for SAP 15 SP4–SP7 and HPC LTSS/ESPOS are now fixed (patches 4843, 4852, 4853); SP7 php7 (Legacy module) fixed. Row "SP4–SP6 incl. LTSS: no fix" was outdated
+- **CloudLinux: correction.** "Fixed" applied only to alt-php/ea-php. Native OS php is only partly in stable (status-page correction 22 Oct 09:21 UTC); the row is now split
+- Next: full re-sweep of every row without a vendor statement (update 16)
+
 ## Update 14 – 22 Oct 2026, 11:15 UTC
 
 - Previously blocked vendor pages read with a headed browser: **Sophos** advisory verified (v3; adds the 11 Aug first-report date, the 1 Aug look-back recommendation and the PHP 8.5 `fatal_error_backtraces=0` mitigation), **Barracuda** advisory added (product table), **Progress** KB statements added (LoadMaster, MOVEit, WS_FTP), **Akamai** WAF rule 3000991 added, **Broadcom/VMware** and **A10** checked (no advisory)
