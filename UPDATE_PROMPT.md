@@ -54,6 +54,8 @@ Pages behind bot protection (Cloudflare/Akamai: Zabbix forum, Sophos, Broadcom, 
 - The vendor's statement: affected / not affected / under investigation, with advisory ID, publication and update date
 - Affected and fixed versions, workarounds or mitigations exactly as published
 - Vendor detection or protection content (IPS/WAF rule IDs), if any
+- **Search the vendor's support/knowledge-base portal for the literal CVE ID**, not only the PSIRT or IPS advisory index. Many vendors (Check Point sk…, Quest KACE KB, Broadcom KB, Ivanti KB, Citrix Tech Zone) publish there first and never on the PSIRT list
+- Check whether a cited link actually mentions the CVE (aggregator lists sometimes link unrelated posts)
 
 ## When you are done
 

@@ -118,6 +118,47 @@
 | SUSE LTSS / SAP fixed | suse.com/security/cve/CVE-2026-109618.html and -109619.html (identical status tables) | 15:12 / 15:15 | raw HTML | "SUSE Linux Enterprise Server 15 SP6-LTSS :: php8 >= 8.2.35-150600.3.39.1"; "SUSE Linux Enterprise Server 15 SP4-LTSS :: php8 >= 8.0.30-150400.4.80.1"; "php7 >= 7.4.33-150400.4.81.1"; patchnames `SUSE-SLE-Product-SLES-15-SP4-LTSS-2026-4852`, `…-4853`, `SUSE-SLE-Product-SLES-15-SP6-LTSS-2026-4843`, `SUSE-SLE-Module-Legacy-15-SP7-2026-4853`; 16.0/16.1 "In progress"; "Overall state of this security issue: Pending" |
 | CloudLinux native php partial | cloudlinux.statuspage.io incident zl0vt1yq3dj5 (`/api/v2/incidents.json`) | 15:12 | JSON API | update 2026-10-22T09:21:46Z: "The fixed builds for the other native versions are not in stable yet. They are in the beta channel (updates-testing), and a gradual rollout has delivered them to about 0.2% of servers so far."; 05:23Z: "The native PHP 7.3 fix for CloudLinux 8 is still being prepared."; alt-php "(in stable since 21 October, 21:48 UTC)" |
 
+## Update 16 checks (22 Oct 2026)
+
+| Claim | Source | Checked (UTC) | Method | Evidence (verbatim / exact) |
+|---|---|---|---|---|
+| Check Point / SUSE / CloudLinux | see update 15 | 15:10–15:16 | – | – |
+| QNAP affected | qnap.com/en/security-advisory/qsa-26-18 | 15:17 | browser (headless; curl returns 202 empty) | "Release date : October 22, 2026"; "Status Fixing"; per-product "Fixing / To be announced"; "QNAP has not received reports of exploitation targeting QNAP products." |
+| Synology resolved | synology.com Synology_SA_26_14 | 15:17 | browser (headless) | "Publish Time: 2026-10-22 19:45:00 UTC+8"; "PHP 7.3 Critical No fix will be provided as this version has reached end of life."; "PHP 8.4 Critical Upgrade to 8.4.27-0051 or above." |
+| Citrix NetScaler affected | community.citrix.com techzone r1640 | 15:23 | browser (headed; headless and curl get Cloudflare 403) | "NetScaler is impacted by two PHP memory safety vulnerabilities … because the NetScaler Management Portal uses PHP"; "All supported NetScaler software versions are impacted. NetScaler Console (Service and on premises) and NetScaler SVM are not impacted"; "Last updated on: October 21, 2026 (Pacific Daylight Time)" |
+| Quest KACE affected | support.quest.com KB 4385046 (lead: KACE RSS item 21 Oct 09:58 GMT) | 15:23 | browser (headed; headless 403) | "The KACE Systems Management Appliance (SMA) and KACE Systems Deployment Appliance (SDA) products have been confirmed to be affected"; "Recently released KACE SMA cumulative updates (15.0 Patch 4 and 15.1 Patch 1) do not contain fixes"; R&D IDs 776199, 776200 |
+| Ivanti ISM not impacted | hub.ivanti.com article 000109782 | 15:24 | browser (headed) | "Ivanti Service Manager products do not use or have PHP repos loaded on them and therefore are NOT impacted"; created 22 Oct 2026 14:23:12 |
+| Ivanti ICS/IPS/vADC/ZTA KB exists, gated | hub.ivanti.com feed 0D5UL00001lXXfz0AG | 15:25 | browser (headed) | Ivanti Employee: "A KB article addressing the new PHP CVE’s … has been published"; article URL redirects to login |
+| Ivanti 'Assessment' article = Tomcat | hub.ivanti.com feed 0D5UL00001lEjgK0AS | 15:24 | browser (headed) | "Article Link: https://forums.ivanti.com/s/article/Assessment-and-Impact-of-Multiple-Apache-Tomcat-Vulnerabilities" |
+| Broadcom VCF not affected | knowledge.broadcom.com/external/article/459989 | 15:21 | browser (headless) | "Updated On: 10-21-2026"; "VMware Cloud Foundation components do not use PHP and are not affected by the two PHP vulnerabilities." |
+| HPE community reply | community.networking.hpe.com thread | 15:21 | browser (headless) | HPE employee: "The product teams across HPE are aware of these vulnerabilities and currently evaluating"; signature: "Any opinions expressed here are solely my own" |
+| Juniper: nothing | supportportal.juniper.net global search CVE-2026-109618 | 15:25 | browser (headed) | 5 results, all unrelated JSAs (JSA110075, JSA110076, JSA110091, JSA112187, JSA110078) |
+| SonicWall: nothing | psirt.global.sonicwall.com/vuln-list | 15:26 | browser (headed) | top entry "SNWLID-2026-0017 … 2026-10-06"; no PHP entry |
+| Barracuda unchanged | trust.barracuda.com/security/php-vulnerabilities | 15:26 | browser (headed) | same product table as update 14 |
+| Sophos v4 + IPS | sophos.com advisory | 15:26 | browser (headed) | "ARTICLE VERSION 4"; "Sophos Firewall and Sophos Endpoint customers can use IPS signatures released on October 22, 2026"; "Sophos Firewall Web Application Firewall (WAF) does not currently include protection specific to these vulnerabilities." |
+| Cisco v1.2 | sec.cloudapps.cisco.com advisory | 15:28 | browser (headed) | "Last Updated: 2026 October 22 14:13 GMT Version 1.2: Interim"; "Currently, no products are known to be affected."; Meraki, Splunk under investigation; "not aware of any malicious use" |
+| F5 unchanged | my.f5.com K000163821 | 15:28 | browser (headed) | "Updated Date: Oct 22, 2026"; BIG-IP fixes "None" |
+| PAN unchanged | security.paloaltonetworks.com/json/CVE-2026-109618 | 15:17 | JSON | last timeline entry "2026-10-21T23:33:00.000Z Threat ID released"; PAN-OS "All affected" |
+| Fortinet updated | fortiguard.fortinet.com FG-IR-26-186 | 15:17 | raw | "2026-10-22: Products under investigation list updated and OT IPS references added"; FortiPortal in not-impacted list |
+| Trend tool | success.trendmicro.com KA-0024789 | 15:17 | raw | "UPDATE (Oct. 22): TrendAI has released an online tool"; still "urgent assessment" |
+| WatchGuard / Netgate / OPNsense / Zscaler / Siemens unchanged | respective pages / CSAF feed | 15:17–15:18 | raw / JSON | WGSA updated 2026-10-21; Zscaler "is assessing"; Siemens feed updated 2026-10-19 |
+| Zabbix statement | zabbix.com/pr/pr912 | 15:19 | raw | "October 22, 2026 … PHP is used by the Zabbix frontend but is a separate software dependency and is not included in Zabbix packages." |
+| Checkmk 2.3.0p51 | checkmk.com/werk/19262 | 15:18 | raw | versions "2.5.0p17 / 2.4.0p38 / 2.3.0p51" |
+| Icinga NCSC link unrelated | icinga.com/blog/icinga-web-2-14-security-releases-and-module-updates | 15:11 | raw | no match for 109618/php2shell; post covers "a low-risk open redirect vulnerability" |
+| Azure App Service patched | azure.github.io/AppService/2026/10/21/php-critical-security-release-app-service-linux.html | 15:21 | raw | "We have completed the rollout of the updated built-in PHP images with the security fixes to both the" [Standard and Latest] "Platform Release Channels"; table PHP 8.2 8.2.35 / 8.3 8.3.36 / 8.4 8.4.27 |
+| Pantheon | status.pantheon.io/api/v2/incidents/x7h8z1yhgvml.json | 15:11 | JSON | 2026-10-21T19:08 PDT: "all pre-production customer environments are patched. Free/sandbox environments will be updated over the next 24-48 hours." |
+| Upsun | status.upsun.com RSS | 15:11 | raw RSS | "Thu, 22 Oct 2026 04:12:36 GMT: We’ve finished deploying the PHP security patch to all Dedicated clusters" |
+| Acquia | status.acquia.com/api/v2/incidents.json | 15:20 | JSON | 2026-10-22T07:48:29Z: "All Acquia customer applications have been patched and remain online." |
+| Scalingo | doc.scalingo.com SSB-2026-005 | 15:11 | raw | "It later blocked multipart HTTP requests at the router for all PHP applications."; "Existing applications … must be rebuilt and redeployed" |
+| Nextcloud | github.com/nextcloud/server/issues/65754, all-in-one #8876 | 15:22 | GitHub API | "Please upgrade to AIO v14.4.1 as soon as possible as it ships the updated php dependencies" |
+| ISPConfig / aaPanel / Gentoo | respective pages | 15:11 | raw | "This is not an ISPConfig vulnerability."; GLSA "Release date October 21, 2026" |
+| Rocky RL8 php:8.2 | apollo.build.resf.org API | 15:27 | JSON | "2026-10-22T12:01:35Z RLSA-2026:87073 Important: php:8.2 security update" |
+| Oracle module streams | linux.oracle.com/cve/CVE-2026-109618.html | 15:27 | raw | ELSA-2026-87072, -87079 "Oracle Linux version 9 (php)"; ELSA-2026-87073 "Oracle Linux version 8 (php)" |
+| Red Hat VEX unchanged | CSAF VEX | 15:27 | JSON | current_release_date 2026-10-22T05:04:37Z; RHEL 9 php:8.4 still known_affected |
+| Alpine all fixed | pkgs.alpinelinux.org | 15:27 | raw | v3.22 php82 8.2.35-r0 (2026-10-22 13:35:10), php84 8.4.27-r0 (12:27:15); v3.23 php84 8.4.27-r0 (09:46:26) |
+| Debian / Amazon unchanged | security-tracker.debian.org, explore.alas.aws.amazon.com | 15:27 | raw | forky 8.4.26-1 vulnerable; AL2 php "No Fix Planned" |
+| KEV / SSVC unchanged | CISA KEV JSON, cveawg.mitre.org | 15:27 | JSON | catalogVersion 2026.10.21, 0 matches; SSVC Exploitation=none (21 Oct 14:34Z) |
+
 ## Fetch log (raw downloads)
 
 | UTC | name | HTTP | bytes | URL |
