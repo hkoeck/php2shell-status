@@ -3,7 +3,7 @@
 > [!WARNING]
 > **AI-generated content.** This document was researched and written by an AI assistant (Claude, Anthropic). Statements were checked against the raw text of the linked primary source (HTML/JSON/PDF, not summaries) **except where marked as not verified**; provenance is logged in [VERIFICATION.md](VERIFICATION.md). It may still contain errors and goes stale quickly. **Always verify against the vendor source before acting.** No warranty.
 
-**Status:** 22 October 2026, 10:20 UTC (update 13). Sources re-checked 10:09–10:20 UTC on 22 Oct 2026 (rows not changed since update 12 were last read 06:13–06:32 UTC).
+**Status:** 22 October 2026, 11:15 UTC (update 14). Sources re-checked 10:09–11:13 UTC on 22 Oct 2026 (rows not changed since update 12 were last read 06:13–06:32 UTC).
 
 ## Key facts
 
@@ -14,7 +14,8 @@
   - **Amazon Threat Intelligence** (AWS Security Blog, 21 Oct): first exploitation attempt in MadPot honeypots on **17 Oct 2026**, four days before disclosure; more attempts by multiple actors on 21 Oct 02:00–08:00 UTC; *"PHP2Shell is now being broadly exploited in the wild."* Amazon recommends **investigating from 17 Oct onward**.
   - **Cloudflare** (blog, 21 Oct): "we observed attack traffic targeting our customers" while the bug was leaked; **watchTowr**: "observing active exploitation attempts of both" CVEs.
   - Official sources lag: **not in CISA KEV** (catalog 2026.10.21); CISA SSVC (21 Oct 14:34 UTC) "Exploitation: none"; BSI (21 Oct) and Canada CCCS (21 Oct): no confirmed exploitation *at that time*; Talos: none seen as of 21 Oct 14:00 UTC.
-- **Mitigations are partial:** PHP names `memory_limit=-1` (109618) and `session.upload_progress.enabled=0` (one 109619 path) as incomplete config mitigations; watchTowr calls `.ini` mitigations "ineffective". **Only patching closes both bugs.** WAF rules (section 2) are defense-in-depth.
+- **Mitigations are partial:** PHP names `memory_limit=-1` (109618) and `session.upload_progress.enabled=0` (one 109619 path) as incomplete config mitigations; watchTowr calls `.ini` mitigations "ineffective". Sophos additionally lists `fatal_error_backtraces=0` on PHP 8.5. **Only patching closes both bugs.** WAF rules (section 2) are defense-in-depth.
+- **Look-back window:** Sophos states the PHP project received the first reports on 11 Aug 2026 and recommends reviewing exposed systems from **1 Aug 2026** (multipart POSTs to non-upload endpoints, `PHP_SESSION_UPLOAD_PROGRESS` in requests, memory-exhaustion errors and worker segfaults, admin logins).
 
 ## 1. Network and security appliances
 
@@ -29,14 +30,15 @@
 | **Trend Micro** | [KA-0024789](https://success.trendmicro.com/en-US/solution/KA-0024789) (upd. 22 Oct): "urgent assessment of existing TrendAI products and services"; no product confirmed affected or unaffected yet | Monitor |
 | **Ivanti** | No public advisory found. A login-gated KB article ("Assessment-and-…", 22 Oct) is referenced on the Ivanti community hub; content not verifiable. Customers are asking about CSA 5.0.7, Connect Secure, EPMM/Sentry | Check KB with support login; isolate internet-facing CSA |
 | **Juniper** | No security bulletin found (support-portal search, 22 Oct 06:22 UTC). J-Web (EX/SRX) runs PHP (Juniper bulletin 2024-10) | Restrict or disable J-Web |
-| **Sophos** | [sophos-sa-20261021-php2shell](https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell): products not affected; MyUTM licensing portal taken offline 21 Oct *(only seen as a summary — site unreachable 06:13–06:25 UTC)* | – |
+| **Sophos** | [sophos-sa-20261021-php2shell](https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell) (version 3, upd. 22 Oct): "No Sophos products are affected". The hosted MyUTM licensing portal (legacy SG UTM) ran an affected PHP version and was taken offline on 21 Oct; no evidence of exploitation found so far | – |
+| **Barracuda** | [Advisory](https://trust.barracuda.com/security/php-vulnerabilities): **not affected**: Email Security Gateway, Cloud-to-Cloud Backup, Cloud Archiving Service, Web Security Gateway / Agent, Advanced Threat Protection, Data Inspector, Incident Response & Impersonation Protection, RMM, BarracudaONE. **Under investigation**: CloudGen Firewall, CloudGen WAN, SecureEdge, Cloud Control, Email Gateway Defense, WAF / Load Balancer ADC / WAF Control Center, WAF-as-a-Service / Active DDoS Protection, Vulnerability Manager, XDR, Security Awareness Training, MSP / Maestro, Backup Service | Restrict mgmt of products under investigation |
+| **Progress** | KB articles (community.progress.com): "LoadMaster is not affected"; MOVEit Transfer / Automation and Automate MFT: "No action or remediation is required"; WS_FTP Server / Professional: supported versions not affected ("previous supported versions were exposed") | Update unsupported WS_FTP versions |
 | **WatchGuard** | [WGSA-2026-0032](https://psirt.watchguard.com/WGSA-2026-0032/) (21 Oct): "initial assessment is that none of our products are affected" | – |
 | **Netgate pfSense** | [Blog](https://www.netgate.com/blog/critical-php-security-update) (21 Oct): **fixed** — Plus 26.07 / 26.03.1 and CE 2.9.0 → PHP 8.5.12; CE 2.8.1 → PHP 8.3.36; update via CLI only. Concern only if GUI or Captive Portal is reachable by attackers | Update now if Captive Portal is used |
 | **OPNsense** | [Announcement](https://forum.opnsense.org/index.php?topic=53191.0) (21 Oct): **fixed** in Business Edition 26.4.2p3 (PHP 8.3.36) and Community 26.7.7 (PHP 8.5.12); restart Captive Portal afterwards | Update |
 | **Zscaler** | [ThreatLabz blog](https://www.zscaler.com/blogs/security-research/cve-2026-109618-and-cve-2026-109619-php-vulnerable-unauthenticated-rce): "Zscaler is assessing the potential impact on its products in the Trust post" | Monitor trust.zscaler.com |
 | **Siemens (OT)** | No ProductCERT advisory yet (CSAF feed last updated 19 Oct). Note: RUGGEDCOM APE1808 runs PAN-OS (see Siemens SSA-104023), so follow the Palo Alto status | Monitor ProductCERT |
-| **Checked, nothing found** | SonicWall PSIRT list (06:31 UTC; latest entry 14 Oct). HPE: only an unrelated advance notice (HPESBNW05159, AOS-8/10, released 15 Oct) found | Ask vendor |
-| **Could not check** (not verified) | Broadcom/VMware (portal behind bot check), Akamai (403), A10 and Barracuda (advisory lists not rendered), Progress/Kemp (no advisory list found). Absence of a statement does not mean not affected | Ask vendor |
+| **Checked, nothing found** | Broadcom/VMware (VMSA list, 11:10 UTC; latest VMSA-2026-0007 of 3 Sep), A10 (advisory list, 11:11 UTC; latest entry Mar 2025), SonicWall PSIRT list (06:31 UTC; latest entry 14 Oct), HPE (only an unrelated advance notice HPESBNW05159, AOS-8/10, released 15 Oct). Absence of a statement does not mean not affected | Ask vendor |
 
 ## 2. WAF, IPS and detection content
 
@@ -53,6 +55,7 @@
 | Fortinet | IPS virtual patch package **37.316** ([Threat Signal 6551](https://fortiguard.fortinet.com/threat-signal-report/6551)); note the PSIRT page itself says "Virtual Patch: No" | – |
 | Check Point | **CPAI-2026-15172**; keep **CPAI-2021-0286** (webshell upload) in Prevent | – |
 | Trend Micro | IPS rule **1012749**, TippingPoint filter **48514**, network detection rule **6021** | – |
+| Akamai App & API Protector | Adaptive Security Engine rule **3000991 v1** "PHP Remote Code Execution Attack Detected" ([blog](https://www.akamai.com/blog/security-research/critical-remote-code-execution-vulnerabilities-php-core), 21 Oct) | Also existing command-injection rules |
 | CloudLinux Imunify360 | WAF rulesets **8.83–8.85** (21 Oct) | ModSecurity/Coraza/LiteSpeed |
 | **Scanners** | Tenable Nessus **369483** + distro local checks; Tenable WAS **115719–115722**. Qualys QIDs **389102**, **39033** (unauth.), **5019895/5019896**, distro QIDs (e.g. 6056502 for RHSA-2026:87080). Rapid7: remote unauthenticated checks (21 Oct); Velociraptor artifact `Generic.Applications.PHPInventory` | For inventory and patch verification |
 
@@ -93,7 +96,7 @@ Fix type: *new upstream* = rebased to 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12; *backpo
 | Fedora 44 | 8.5 | **Fixed**: `php-8.5.12-1.fc44` ([FEDORA-2026-a9eba4bbc3](https://bodhi.fedoraproject.org/updates/FEDORA-2026-a9eba4bbc3), stable 21 Oct 16:43 UTC) | New upstream |
 | **Remi repository** (EL8 / 9 / 10) | 7.4–8.5 | **Fixed** (repoview): `8.5.12-1`, `8.4.27-1`, `8.3.36-1`, `8.2.35-1`; backports `8.1.34-6`, `8.0.30-21`, `7.4.33-31`. No EL7 builds ([issue #351](https://github.com/remicollet/remirepo/issues/351)) | New upstream + backports |
 | **packages.sury.org / ondrej PPA** (Debian 12/13, Ubuntu 24.04) | 7.4–8.5 | **Fixed** (builds of 21 Oct): `8.5.12`, `8.4.27`, `8.3.36`, `8.2.35`, plus `8.1.34-9`, `8.0.30-25`, `7.4.33-31`. Changelogs of 7.4 and 8.1 say "Backported from 8.2.35 – CVE-2026-109618, CVE-2026-109619" (8.0 not checked) | New upstream + backports |
-| CloudLinux / TuxCare | various | **Conflicting:** the [CloudLinux post](https://blog.cloudlinux.com/php-cve-2026-109618-and-cve-2026-109619) read "last updated 22 Oct 06:00 UTC" (alt-php fixed on CL 7/8/9) at 06:13 UTC, but at 10:10 UTC it reads "last updated 21 Oct 23:00 UTC": ea-php52–85 fixed; alt-php on CL 7/8/9 **not yet** in the CloudLinux repos (CL 10: alt-php 7.4 fixed); native PHP in testing | – |
+| CloudLinux / TuxCare | 5.2–8.5 | **Fixed** ([CloudLinux KB](https://cloudlinux.zendesk.com/hc/en-us/articles/31194180517916-PHP-CVE-2026-109618-CVE-2026-109619-PHP2Shell-fixed-alt-php-and-ea-php-packages-and-how-to-verify), upd. 22 Oct): all fixed alt-php and ea-php builds are in the regular stable repos (alt-php reached the CloudLinux repos approx. 01:00 UTC on 22 Oct). CL 7/8/9 e.g. alt-php74 `7.4.33-81`, alt-php82 `8.2.34-7`, alt-php83 `8.3.35-6`, alt-php84 `8.4.26-5`, alt-php85 `8.5.11-5`; ea-php e.g. `ea-php82-php-cli-8.2.34-2.el8.cloudlinux.1`. alt-php44/51: no fix. The CloudLinux *blog* post lags behind the KB | Backport |
 | EPEL | – | Not applicable (EPEL ships no PHP) | – |
 
 ## 4. Cloud platforms and container images
@@ -113,7 +116,7 @@ These tools run on PHP but do not fix PHP themselves (exceptions are images and 
 | Product | PHP role (evidence) | Vendor statement / status | Action |
 |---|---|---|---|
 | **Checkmk** | PHP only for NagVis; packages use the distribution's PHP | [Werk #19262](https://checkmk.com/werk/19262) (21 Oct): affected versions 2.5.0, 2.4.0, 2.3.0, **Docker image only**; rebuilt with patched Ubuntu PHP in **2.5.0p17** and **2.4.0p38**. "For all other installations, Checkmk uses the PHP packages of your Linux distribution." **Checkmk Appliance firmware 1.7.25** (21 Oct) contains the fixes. No 2.3.0 release with the fix found | Update OS PHP; Docker: new image and recreate container; appliance: firmware 1.7.25 |
-| **Zabbix** | Web frontend is PHP (14 % of the repo); official Docker images bundle PHP | No advisory found ([security advisories](https://www.zabbix.com/security_advisories)). Docker: maintainer in [zabbix-docker #1982](https://github.com/zabbix/zabbix-docker/issues/1982) (22 Oct 00:47 UTC): "all latest images will be rebuilt today"; the `*-latest` tags of `zabbix/zabbix-web-nginx-pgsql` were updated on Docker Hub on 22 Oct 07:14–07:38 UTC. Users report that version-pinned tags (e.g. `alpine-7.0.32`) still contain PHP 8.5.11 | Update OS PHP; Docker: pull `*-latest` and verify `php -v` in the container, pinned tags may be unpatched |
+| **Zabbix** | Web frontend is PHP (14 % of the repo); official Docker images bundle PHP | No advisory found ([security advisories](https://www.zabbix.com/security_advisories)); the [forum thread](https://www.zabbix.com/forum/zabbix-help/517840-critical-php-cve-released-and-patched-today-when-will-zabbix-docker-catch-up) contains only community posts. Docker: maintainer in [zabbix-docker #1982](https://github.com/zabbix/zabbix-docker/issues/1982) (22 Oct 00:47 UTC): "all latest images will be rebuilt today"; the `*-latest` tags of `zabbix/zabbix-web-nginx-pgsql` were updated on Docker Hub on 22 Oct 07:14–07:38 UTC. Users report that version-pinned tags (e.g. `alpine-7.0.32`) still contain PHP 8.5.11 | Update OS PHP; Docker: pull `*-latest` and verify `php -v` in the container, pinned tags may be unpatched |
 | **Centreon** | Web UI is PHP (72 %) | [Security notice](https://thewatch.centreon.com/latest-security-bulletins-64/security-notice-centreon-assessment-of-critical-php-vulnerabilities-6007) (21 Oct, before the release): assessment in progress. "Centreon does not provide or maintain the PHP packages installed on user platforms", so take PHP updates from the OS or community repo | Update OS/Remi/sury PHP; restrict web UI |
 | **GLPI** (ITSM) | PHP (84 %) | [GLPI blog](https://www.glpi-project.org/en/%F0%9F%9A%A8-critical-php2shell-php-vulnerabilities-cve-2026-109618-cve-2026-109619-what-you-need-to-know-for-your-glpi-server/): GLPI code is not the problem, but "any web server hosting a GLPI instance remains vulnerable until the server's underlying PHP engine is patched". GLPI Network Cloud patched as of 21 Oct 14:00 UTC | Update host/container PHP |
 | **Nagios XI / Nagios Core** | XI: PHP web UI; Core: CGIs in C plus PHP frame pages (`index.php`, `main.php`, `side.php`) | No statement found ([security disclosures](https://www.nagios.com/security-disclosures/), [XI changelog](https://www.nagios.com/changelog/nagios-xi/), 10:13 UTC) | Update OS PHP |
@@ -147,7 +150,7 @@ NCSC-NL also lists Nagios Fusion, Centreon and Zabbix as "vulnerable when deploy
 
 ## Known gaps (not verified)
 
-Could not be read from the primary source at the time of checking: Sophos advisory (site unreachable), Ivanti KB (login), Broadcom, Akamai, A10, Barracuda, Progress, Zabbix forum (bot check; Zabbix Docker status taken from the GitHub issue instead), Azure App Service runtime patching, QNAP/Synology (NCSC-NL only), TuxCare ELS details (NCSC-NL only). CloudLinux's post contradicts itself between two checks (see section 3). Absence of a vendor statement does not mean a product is not affected.
+Could not be read from the primary source: Ivanti KB (login required), Azure App Service runtime patching (no Microsoft statement found), QNAP/Synology (NCSC-NL only), TuxCare ELS details beyond CloudLinux (NCSC-NL only). Absence of a vendor statement does not mean a product is not affected.
 
 ## Checking whether you are patched
 

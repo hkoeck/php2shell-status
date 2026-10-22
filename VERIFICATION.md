@@ -96,6 +96,20 @@
 | Implementation languages | GitHub languages API | 10:14 | API | ansible/ansible Python 86 %; ansible/awx Python 98 %; zabbix/zabbix PHP 14 %; icingaweb2 PHP 84 %; cacti PHP 62 %; librenms PHP 88 %; glpi PHP 84 %; centreon PHP 72 %; nagioscore C 75 % + `html/index.php.in, main.php, side.php`; rundeck Groovy/Java; semaphore Go |
 | Ansible not in Red Hat VEX | VEX product tree | 10:14 | JSON | products: RHEL, OpenShift AI, OpenShift Dev Spaces, Hardened Images — no Ansible product |
 
+
+## Update 14 checks (22 Oct 2026, headed Chrome)
+
+| Claim | Source | Checked (UTC) | Method | Evidence (verbatim / exact) |
+|---|---|---|---|---|
+| Zabbix forum: no vendor statement | zabbix.com forum thread 517840 | 11:09 | browser (headed) | community posts only, e.g. "There will probably be an implicit unintended patch when the image for the next zabbix patch version 7.0.33(?) is released" |
+| Sophos advisory | sophos.com | 11:09 | browser (headed) | "UPDATED 2026 Oct 22 \| ARTICLE VERSION 3 \| FIRST PUBLISHED 2026 Oct 21"; "No Sophos products are affected by these vulnerabilities."; "The PHP Project received the first reports of these issues on August 11, 2026"; "reviewing activity on exposed systems from August 1, 2026 onwards"; "on PHP 8.5, fatal_error_backtraces=0" |
+| Broadcom/VMware: no advisory | support.broadcom.com security advisories | 11:10 | browser (headed) | latest entry "VMSA-2026-0007 … 03 September 2026"; no PHP entry |
+| Akamai WAF rule | akamai.com blog (21 Oct) | 11:10 | browser (headed) | "Adaptive Security Engine: 3000991 v1 — PHP Remote Code Execution Attack Detected (CVE-2026-109618, CVE-2026-109619)" |
+| CloudLinux KB | cloudlinux.zendesk.com article 31194180517916 | 11:10 | browser (headed) | "All fixed alt-php and ea-php builds are in the regular stable repositories"; "reached the CloudLinux repositories at about 01:00 UTC on 22 October"; build table (alt-php74 7.4.33-81 …) |
+| A10: no advisory | support.a10networks.com security advisories | 11:11 | browser (headed) | latest entry "RADIUS PROTOCOL - CVE-2024-3596 March 20, 2025" |
+| Barracuda advisory | trust.barracuda.com/security/php-vulnerabilities | 11:12 | browser (headed) | product table verbatim (Not affected / Under investigation) |
+| Progress KB | community.progress.com search | 11:12 | browser (headed) | titles: "LoadMaster is not affected by CVE-2026-109618 and CVE-2026-109619"; MOVEit: "No action or remediation is required"; WS_FTP: "supported WS_FTP Server and Professional versions are not affected … previous supported versions were exposed" (search snippets of the KB articles) |
+
 ## Fetch log (raw downloads)
 
 | UTC | name | HTTP | bytes | URL |

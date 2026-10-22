@@ -2,6 +2,13 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
+## Update 14 – 22 Oct 2026, 11:15 UTC
+
+- Previously blocked vendor pages read with a headed browser: **Sophos** advisory verified (v3; adds the 11 Aug first-report date, the 1 Aug look-back recommendation and the PHP 8.5 `fatal_error_backtraces=0` mitigation), **Barracuda** advisory added (product table), **Progress** KB statements added (LoadMaster, MOVEit, WS_FTP), **Akamai** WAF rule 3000991 added, **Broadcom/VMware** and **A10** checked (no advisory)
+- **CloudLinux contradiction resolved:** the KB article (updated 22 Oct) confirms all fixed alt-php/ea-php builds are in the stable repos since approx. 01:00 UTC 22 Oct; the blog post is outdated
+- Zabbix forum: only community posts, no vendor statement
+- Known gaps reduced to Ivanti KB, Azure App Service, QNAP/Synology, TuxCare ELS details
+
 ## Update 13 – 22 Oct 2026, 10:20 UTC
 
 - **Linux section restored to one row per release** (Distribution / PHP / Status / Fix type) and all package versions put in code formatting. The Debian row was broken: GitHub rendered the text between the `~` in `8.4.27-1~deb13u1` … `8.2.35-1~deb12u1` as strikethrough

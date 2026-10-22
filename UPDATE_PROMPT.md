@@ -46,6 +46,8 @@ You are maintaining `README.md` in this repository: a status overview of PHP2She
 
 JavaScript-heavy portals (F5 MyF5, Citrix support, Ivanti hub, Juniper support portal, SonicWall PSIRT, HPE support) usually work in a headless browser: wait until the article text is visible, then read `document.body.innerText`.
 
+Pages behind bot protection (Cloudflare/Akamai: Zabbix forum, Sophos, Broadcom, Akamai, Zendesk help centers) reject headless Chrome because its User-Agent says `HeadlessChrome`. Use a normal, **headed** Chrome on a real desktop session instead; the automatic browser check then usually passes on its own. Do not spoof the User-Agent or solve challenges on someone's behalf. On Linux, if that desktop user has no unlocked login keyring, start Chrome with `--password-store=basic`, otherwise Chrome blocks every page load waiting for a keyring password prompt.
+
 ## For each new product, find out
 
 - Does it ship or embed PHP? (evidence, ideally from the vendor's own documentation)
