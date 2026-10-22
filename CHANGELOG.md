@@ -2,7 +2,7 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
-## Update 15 – 22 Oct 2026, 15:20 UTC
+## Update 15 – 22 Oct 2026, 15:16 UTC
 
 - **Check Point: correction.** The row said "No product statement"; Check Point published [sk1000302](https://support.checkpoint.com/results/sk/sk1000302) on 21 Oct in its support KB (not on the IPS advisory site that was checked). Firewall web portals (Mobile Access, SNX, SAML Remote Access, Identity Awareness Captive Portal) on R80–R82.20 and Spark are **affected**; fix planned for 11 Nov 2026; automatic mitigation announced for before 22 Oct 21:00 GMT; manual `cp-httpd.conf` mitigation documented
 - **SUSE:** SLES 15 SP4/SP5/SP6 LTSS, SLES for SAP 15 SP4–SP7 and HPC LTSS/ESPOS are now fixed (patches 4843, 4852, 4853); SP7 php7 (Legacy module) fixed. Row "SP4–SP6 incl. LTSS: no fix" was outdated

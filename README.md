@@ -3,7 +3,7 @@
 > [!WARNING]
 > **AI-generated content.** This document was researched and written by an AI assistant (Claude, Anthropic). Statements were checked against the raw text of the linked primary source (HTML/JSON/PDF, not summaries) **except where marked as not verified**; provenance is logged in [VERIFICATION.md](VERIFICATION.md). It may still contain errors and goes stale quickly. **Always verify against the vendor source before acting.** No warranty.
 
-**Status:** 22 October 2026, 15:20 UTC (update 15). Changed in this update: Check Point, SUSE, CloudLinux (re-checked 15:10–15:16 UTC). Other rows: see update 14 (sources re-checked 10:09–11:13 UTC on 22 Oct 2026).
+**Status:** 22 October 2026, 15:16 UTC (update 15). Changed in this update: Check Point, SUSE, CloudLinux (re-checked 15:10–15:16 UTC). Other rows: see update 14 (sources re-checked 10:09–11:13 UTC on 22 Oct 2026).
 
 ## Key facts
 
