@@ -2,6 +2,10 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
+## Update 19 – 22 Oct 2026, 21:02 UTC
+
+- Check Point sk1000302 re-read at 21:02 UTC, after the announced deadline: the automatic mitigation is still announced in the future tense ("will release … before October, 22, 2026 at 21:00 GMT"), no confirmation of release; last modified 2026-10-22. Manual mitigation remains the documented option until Check Point confirms
+
 ## Update 18 – 22 Oct 2026, 20:33 UTC
 
 Full re-check of all 93 linked sources (20:21–20:33 UTC) with an automated claim check (each row's key strings searched in the fresh source text), plus a new search for vendor statements (NCSC-NL commits since 11:00 UTC, web search, vendor support portals).

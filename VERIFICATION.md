@@ -202,6 +202,12 @@
 | Plesk | Zendesk API article 44397729587351 | 20:26 | JSON | updated_at 2026-10-22T17:44:23Z; fix table unchanged |
 | A10, Siemens | A10 advisory list; Siemens CSAF feed | 20:33 | browser / JSON | A10 top A10-2025-0034; Siemens feed updated 2026-10-19 |
 
+## Update 19 checks (22 Oct 2026)
+
+| Claim | Source | Checked (UTC) | Method | Evidence (verbatim / exact) |
+|---|---|---|---|---|
+| Check Point auto-mitigation not confirmed | support.checkpoint.com/results/sk/sk1000302 | 21:02 | browser (headless), page `textContent` incl. embedded JSON | "Check Point will release an automatic mitigation through the Automatic Updates mechanism before October, 22, 2026 at 21:00 GMT."; `"lastModified":"2026-10-22"` |
+
 ## Fetch log (raw downloads)
 
 | UTC | name | HTTP | bytes | URL |
