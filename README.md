@@ -3,7 +3,7 @@
 > [!WARNING]
 > **AI-generated content.** This document was researched and written by an AI assistant (Claude, Anthropic) and reviewed by AI against the linked primary sources. It may contain errors or be out of date. **Always verify against the vendor sources before acting.** No warranty.
 
-**Status snapshot:** 22 October 2026, approx. 06:30 UTC (update 11). Checked against primary sources on 22 Oct 2026 between 05:50 and 06:30 UTC — see [Verification notes](#verification-notes).
+**Status snapshot:** 22 October 2026, approx. 06:05 UTC (update 11). Checked against primary sources on 22 Oct 2026 between approx. 05:40 and 06:05 UTC — see [Verification notes](#verification-notes).
 
 ## Background
 
@@ -167,7 +167,7 @@ After updating, restart PHP-FPM; for mod_php do a full Apache restart.
 
 ## Verification notes
 
-Checked on 22 Oct 2026 (approx. 05:50–06:30 UTC) against the primary sources: both PHP GHSAs, Debian tracker, USN-8948-1/-2, Red Hat CVE page, RHSB-2026-013 and all six RHSAs, Oracle Linux CVE page, AlmaLinux blog, CIQ KB, Remi EL9 repoview + issue #351, Fedora advisory, SUSE CVE page, Amazon ALAS + AWS bulletin, Arch package API, sury.org/PPA package indexes, Docker Hub, F5 (browser), Plesk (Zendesk API), Palo Alto, Cisco, Talos, Fortinet (PSIRT + Threat Signal), Sophos, Check Point (advisory + blog), Trend Micro, Netgate, OPNsense, cPanel, DirectAdmin, CloudLinux blog, Google Cloud, watchTowr, CERT-EU, NCSC-NL (list as of 21 Oct 21:40 UTC).
+Checked on 22 Oct 2026 (approx. 05:40–06:05 UTC) against the primary sources: both PHP GHSAs, Debian tracker, USN-8948-1/-2, Red Hat CVE page, RHSB-2026-013 and all six RHSAs, Oracle Linux CVE page, AlmaLinux blog, CIQ KB, Remi EL9 repoview + issue #351, Fedora advisory, SUSE CVE page, Amazon ALAS + AWS bulletin, Arch package API, sury.org/PPA package indexes, Docker Hub, F5 (browser), Plesk (Zendesk API), Palo Alto, Cisco, Talos, Fortinet (PSIRT + Threat Signal), Sophos, Check Point (advisory + blog), Trend Micro, Netgate, OPNsense, cPanel, DirectAdmin, CloudLinux blog, Google Cloud, watchTowr, CERT-EU, NCSC-NL (list as of 21 Oct 21:40 UTC).
 
 **Corrected compared with the original PDF (update 10):**
 - RHEL: RHEL 10 and the RHEL 9 default stream were listed as "not found yet", but fixes were already out (RHSA-2026:87070, :87071, :87151)
