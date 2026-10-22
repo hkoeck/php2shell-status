@@ -1,9 +1,9 @@
 # PHP2Shell (CVE-2026-109618 / CVE-2026-109619) – Enterprise Vendor and Distribution Status
 
 > [!WARNING]
-> **AI-generated content.** This document was researched and written by an AI assistant (Claude, Anthropic). Every statement was checked against the raw text of the linked primary source (HTML/JSON/PDF, not summaries); provenance is logged in [VERIFICATION.md](VERIFICATION.md). It may still contain errors and goes stale quickly. **Always verify against the vendor source before acting.** No warranty.
+> **AI-generated content.** This document was researched and written by an AI assistant (Claude, Anthropic). Statements were checked against the raw text of the linked primary source (HTML/JSON/PDF, not summaries) **except where marked as not verified**; provenance is logged in [VERIFICATION.md](VERIFICATION.md). It may still contain errors and goes stale quickly. **Always verify against the vendor source before acting.** No warranty.
 
-**Status:** 22 October 2026, 06:25 UTC (update 12). Sources checked 06:13–06:25 UTC on 22 Oct 2026.
+**Status:** 22 October 2026, 06:32 UTC (update 12). Sources checked 06:13–06:32 UTC on 22 Oct 2026.
 
 ## Key facts
 
@@ -35,7 +35,8 @@
 | **OPNsense** | [Announcement](https://forum.opnsense.org/index.php?topic=53191.0) (21 Oct): **fixed** in Business Edition 26.4.2p3 (PHP 8.3.36) and Community 26.7.7 (PHP 8.5.12); restart Captive Portal afterwards | Update |
 | **Zscaler** | [ThreatLabz blog](https://www.zscaler.com/blogs/security-research/cve-2026-109618-and-cve-2026-109619-php-vulnerable-unauthenticated-rce): "Zscaler is assessing the potential impact on its products in the Trust post" | Monitor trust.zscaler.com |
 | **Siemens (OT)** | No ProductCERT advisory yet (CSAF feed last updated 19 Oct). Note: RUGGEDCOM APE1808 runs PAN-OS (see Siemens SSA-104023), so follow the Palo Alto status | Monitor ProductCERT |
-| **No statement found** (22 Oct, 06:20 UTC) | Broadcom/VMware (portal behind bot check), HPE/Aruba, SonicWall, Barracuda, Progress/Kemp, A10, Akamai (product side). Absence of a statement does not mean not affected | Ask vendor |
+| **Checked, nothing found** | SonicWall PSIRT list (06:31 UTC; latest entry 14 Oct). HPE: only an unrelated advance notice (HPESBNW05159, AOS-8/10, released 15 Oct) found | Ask vendor |
+| **Could not check** (not verified) | Broadcom/VMware (portal behind bot check), Akamai (403), A10 and Barracuda (advisory lists not rendered), Progress/Kemp (no advisory list found). Absence of a statement does not mean not affected | Ask vendor |
 
 ## 2. WAF, IPS and detection content
 
@@ -72,9 +73,9 @@
 | **Ubuntu** | **Fixed** [USN-8948-1](https://ubuntu.com/security/notices/USN-8948-1): 26.10 8.5.9-0ubuntu2.1, 26.04 LTS 8.5.4-0ubuntu1.5, 24.04 LTS 8.3.6-0ubuntu0.24.04.13, 22.04 LTS 8.1.2-1ubuntu2.28. **Ubuntu Pro** [USN-8948-2](https://ubuntu.com/security/notices/USN-8948-2): 20.04 7.4.3-4ubuntu2.29+esm5, 18.04 7.2.24-0ubuntu0.18.04.17+esm14, 16.04 7.0.33-0ubuntu0.16.04.16+esm22 and 14.04 5.5.9+dfsg-1ubuntu4.29+esm18 (Legacy add-on) |
 | **Debian** | **Fixed**: trixie php8.4 8.4.27-1~deb13u1 (DSA-6574-1), bookworm php8.2 8.2.35-1~deb12u1 (DLA-4848-1), sid 8.4.27-1; forky vulnerable. **Freexian ELTS** (paid): bullseye php7.4 7.4.33-1+deb11u14, buster php7.3 7.3.31-1~deb10u16, stretch php7.0 7.0.33-0+deb9u26 (ELA-1853/1854/1855-1) |
 | **Amazon Linux** | **Fixed** (22 Oct): AL2023 php8.2/8.3/8.4/8.5 (ALAS2023-2026-3301…3304), AL2 PHP 8.2 extra (ALAS2PHP8.2-2026-015), AL2027 preview php8.5. **No fix planned**: AL2 core php, AL2023 php8.1 |
-| Fedora | Fedora 44: php-8.5.12-1.fc44 (FEDORA-2026-a9eba4bbc3) |
+| Fedora | Fedora 44: php-8.5.12-1.fc44 ([FEDORA-2026-a9eba4bbc3](https://bodhi.fedoraproject.org/updates/FEDORA-2026-a9eba4bbc3), stable 21 Oct 16:43, severity high) |
 | Remi repository | **Fixed** for EL8/9/10 (modular repoview): 8.5.12-1, 8.4.27-1, 8.3.36-1, 8.2.35-1 and backports 8.1.34-6, 8.0.30-21, 7.4.33-31. No EL7 builds ([issue #351](https://github.com/remicollet/remirepo/issues/351)) |
-| packages.sury.org / ondrej PPA | New builds dated 21 Oct for Debian 12/13 and Ubuntu 24.04: 8.5.12, 8.4.27, 8.3.36, 8.2.35, plus 8.1.34-9, 8.0.30-25, 7.4.33-31 (repo index check; backport content of the EOL builds not verified) |
+| packages.sury.org / ondrej PPA | New builds dated 21 Oct for Debian 12/13 and Ubuntu 24.04: 8.5.12, 8.4.27, 8.3.36, 8.2.35, plus 8.1.34-9, 8.0.30-25, 7.4.33-31. Package changelogs of php7.4 7.4.33-31 and php8.1 8.1.34-9 contain "Backported from 8.2.35 – [CVE-2026-109618, CVE-2026-109619]" (8.0 not checked) |
 | TuxCare / CloudLinux | [CloudLinux](https://blog.cloudlinux.com/php-cve-2026-109618-and-cve-2026-109619) (TL;DR 22 Oct 06:00 UTC): ea-php52–85 fixed; alt-php fixed in stable (CL 7/8/9/10); native PHP 8.2/8.3 (CL 9) and 8.2 (CL 8) fixed, others rolling out |
 | EPEL | Not applicable (no PHP in EPEL) |
 
@@ -128,7 +129,7 @@ Restart PHP-FPM after updating; for mod_php do a full Apache restart. Rebuild co
 PHP: [GHSA-w8hw-w9fx-j79w](https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w) (109618), [GHSA-6wmf-4rv5-p3rp](https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp) (109619) ·
 Exploitation: [Amazon Threat Intelligence](https://aws.amazon.com/blogs/security/amazon-threat-intelligence-identifies-php2shell-exploitation-prior-to-public-disclosure-in-madpot/), [Cloudflare](https://blog.cloudflare.com/php-vulnerabilities-waf-protection/), [watchTowr](https://watchtowr.com/intelligence/php-remote-code-execution-php2shell/), [Talos](https://blog.talosintelligence.com/two-critical-rces-in-php-core/), [Unit 42](https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/) (PoC seen; no ITW claim) ·
 Scanners: [Tenable](https://www.tenable.com/blog/php2shell-cve-2026-109618-cve-2026-109619-frequently-asked-questions-about-critical-php-remote), [Qualys](https://blog.qualys.com/vulnerabilities-threat-research/2026/10/20/php-announces-critical-security-release-for-two-vulnerabilities), [Rapid7](https://www.rapid7.com/blog/post/etr-cve-2026-109618-and-cve-2026-109619-critical-unauthenticated-remote-code-execution-in-php/) ·
-Distros: [Debian](https://security-tracker.debian.org/tracker/CVE-2026-109618), [Freexian ELTS](https://deb.freexian.com/extended-lts/tracker/CVE-2026-109618), [Ubuntu](https://ubuntu.com/security/CVE-2026-109618), [Red Hat CVE](https://access.redhat.com/security/cve/cve-2026-109618) / [CSAF VEX](https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-109618.json), [Rocky errata](https://errata.rockylinux.org/), [Amazon ALAS](https://explore.alas.aws.amazon.com/CVE-2026-109618.html), [Fedora](https://linuxsecurity.com/advisories/fedora/fedora-44-php-2026-a9eba4bbc3), [Remi EL9 repoview](https://rpms.remirepo.net/enterprise/9/modular/x86_64/repoview/php-fpm.html) ·
+Distros: [Debian](https://security-tracker.debian.org/tracker/CVE-2026-109618), [Freexian ELTS](https://deb.freexian.com/extended-lts/tracker/CVE-2026-109618), [Ubuntu](https://ubuntu.com/security/CVE-2026-109618), [Red Hat CVE](https://access.redhat.com/security/cve/cve-2026-109618) / [CSAF VEX](https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-109618.json), [Rocky errata](https://errata.rockylinux.org/), [Amazon ALAS](https://explore.alas.aws.amazon.com/CVE-2026-109618.html), [Fedora Bodhi](https://bodhi.fedoraproject.org/updates/FEDORA-2026-a9eba4bbc3), [Remi EL9 repoview](https://rpms.remirepo.net/enterprise/9/modular/x86_64/repoview/php-fpm.html) ·
 Vendor and platform links are in the tables above.
 
 ## Changes in update 12
@@ -145,3 +146,4 @@ Vendor and platform links are in the tables above.
   - Unit 42 only reports PoC, not exploitation in the wild
   - Wrong check timestamps fixed
   - Unverified DirectAdmin "7.3 and older not patched" removed
+- **Still not verified:** Sophos advisory (site unreachable), Ivanti KB (login), Broadcom, Akamai, A10, Barracuda, Progress, Alpine aports, Azure App Service runtime patching, QNAP/Synology (NCSC-NL only), TuxCare ELS details (NCSC-NL only)

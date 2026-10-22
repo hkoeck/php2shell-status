@@ -1,6 +1,6 @@
 # Verification log
 
-> AI-generated. Each row: the claim used in README.md, its source, when it was checked (UTC, 22 Oct 2026 unless noted), how (raw = curl + HTML-to-text, browser = Playwright innerText, JSON = machine-readable feed), and the exact evidence.
+> AI-generated. Each row: the claim used in README.md, its source, when it was checked (UTC, 22 Oct 2026), how (raw = curl + HTML-to-text, browser = Playwright innerText, JSON = machine-readable feed), and the exact evidence. Rows marked **not verified** could not be read from the primary source.
 
 ## Claims
 
@@ -57,8 +57,9 @@
 | CloudLinux | blog (TL;DR 22 Oct 06:00 UTC) | 06:13 | raw | ea-php52–85 fixed; rulesets 8.83 (09:08 UTC) / 8.84 (13:07) / 8.85 (17:17) |
 | Remi EL8/9/10 | repoview | 06:24 | raw | 8.5.12-1 … 7.4.33-31 per EL |
 | Freexian ELTS | deb.freexian.com tracker | 06:24 | raw | ELA-1853-1/1854-1/1855-1; bullseye 7.4.33-1+deb11u14 fixed |
-| Docker Official php | Docker Hub API + docker-library versions.json | 05:55 (update 11) | JSON | 8.5-fpm 2026-10-21T18:58Z … 8.4-fpm 22:07Z; versions 8.2.35/8.3.36/8.4.27/8.5.12 |
-| sury / Arch | repo Packages indexes / Arch JSON API | 05:55 (update 11) | raw | versions verbatim |
+| Docker Official php | Docker Hub API + docker-library versions.json | 06:30 | JSON | 8.5-fpm 2026-10-21T18:58Z … 8.4-fpm 22:07Z; versions 8.2.35/8.3.36/8.4.27/8.5.12 |
+| Arch | Arch JSON API | 06:30 | JSON | php 8.5.12-1, last_update 2026-10-21T13:50Z |
+| sury.org | trixie Packages index + .deb changelogs (php7.4-common, php8.1-common) | 06:30–06:31 | raw | "Backported from 8.2.35 + [CVE-2026-109618, CVE-2026-109619]: Avoid state corruption via bailout." |
 | Tenable | blog | 06:15 | raw | plugin 369483; WAS 115719–115722 |
 | Qualys | blog | 06:15 | raw | QIDs 5019895, 5019896, 389102, 39033, 6056502, … |
 | Rapid7 | blog | 06:15 | raw | "remote unauthenticated vulnerability checks now available in a dedicated release" |
@@ -66,6 +67,10 @@
 | CCCS AL26-026 | cyber.gc.ca | 06:15 | raw | "no active exploitation being identified at this time" |
 | NCSC-UK | ncsc.gov.uk news | 06:15 | raw | "Published 21 October 2026" |
 | NCSC-NL list | GitHub | 06:19 | git API | last commit 2026-10-21T21:40:13Z |
+| Fedora | Bodhi JSON | 06:30 | JSON | FEDORA-2026-a9eba4bbc3 stable 2026-10-21 16:43:43, php-8.5.12-1.fc44, security/high |
+| HPE | HPESBNW05159 (Playwright) | 06:31 | browser | "Release Date: 2026-10-15"; AOS-8/AOS-10 advance notice, unrelated to PHP |
+| SonicWall | PSIRT vuln-list (Playwright) | 06:31 | browser | no PHP entry; latest SNWLID-2026-0018 (2026-10-14) |
+| A10 / Barracuda / Progress | vendor pages | 06:19–06:31 | raw | lists not rendered / no PHP hit — **not verified** |
 
 ## Fetch log (raw downloads)
 
