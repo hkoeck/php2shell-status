@@ -24,7 +24,7 @@
 | Red Hat per-stream status | Red Hat CSAF VEX rev 3 (2026-10-22T05:04Z) | 06:14 | JSON | RHSA-2026:87070/87071/87072/87073/87079/87080/87151/87414; RHEL 9 php:8.4 "Affected / none_available"; RHEL 6/7 under_investigation |
 | Rocky community RLSAs | apollo.build.resf.org API | 06:20 | JSON | RLSA-2026:87070/87071 (RL10), 87072/87079/87151 (RL9), 87080 (RL8), published 2026-10-22 00:01–00:08Z |
 | CIQ RLC Pro: LTS 9.2/9.6 available, rest pending | CIQ KB | 06:13 | raw | table verbatim |
-| Debian | security-tracker | 06:13 | raw | bookworm (security) 8.2.35-1~deb12u1 fixed DLA-4848-1; trixie (security) 8.4.27-1~deb13u1 DSA-6574-1; forky 8.4.26-1 vulnerable; sid 8.4.27-1 fixed |
+| Debian | security-tracker | 06:13 | raw | bookworm (security) 8.2.35-1\~deb12u1 fixed DLA-4848-1; trixie (security) 8.4.27-1\~deb13u1 DSA-6574-1; forky 8.4.26-1 vulnerable; sid 8.4.27-1 fixed |
 | Ubuntu | USN-8948-1/-2, CVE page | 06:13 | raw | versions verbatim; priority "Critical" |
 | Oracle Linux | linux.oracle.com CVE page | 06:13 | raw | ELSA-2026-87070 (OL10 php), -87071 (OL10 php8.4), -87151 (OL9 php), 2026-10-21 |
 | Amazon Linux | ALAS explore | 06:13 | raw | ALAS2PHP8.2-2026-015; ALAS2023-2026-3301..3304; ALAS2027-2026-243; "No Fix Planned" ×2 |
@@ -71,6 +71,30 @@
 | HPE | HPESBNW05159 (Playwright) | 06:31 | browser | "Release Date: 2026-10-15"; AOS-8/AOS-10 advance notice, unrelated to PHP |
 | SonicWall | PSIRT vuln-list (Playwright) | 06:31 | browser | no PHP entry; latest SNWLID-2026-0018 (2026-10-14) |
 | A10 / Barracuda / Progress | vendor pages | 06:19–06:31 | raw | lists not rendered / no PHP hit — **not verified** |
+
+
+## Update 13 checks (22 Oct 2026)
+
+| Claim | Source | Checked (UTC) | Method | Evidence (verbatim / exact) |
+|---|---|---|---|---|
+| KEV still not listed; SSVC unchanged; VEX rev 3 | CISA KEV JSON (catalog 2026.10.21), CVE record ADP, Red Hat VEX | 10:10 | JSON | no KEV entry; `Exploitation: none` @ 2026-10-21T14:34Z; VEX `current_release_date 2026-10-22T05:04:37Z` |
+| Fortinet: FortiClient EMS now not impacted | FG-IR-26-186 | 10:09 | raw | "Products confirmed NOT Impacted: FortiOS FortiClient EMS FortiPAM FortiProxy FortiDeceptor FortiSandbox FortiMail Cloud FortiNAC-F FortiAP …" |
+| Oracle Linux 8 fixed | linux.oracle.com CVE page | 10:09 | raw | "Oracle Linux version 8 (php) \| ELSA-2026-87080 \| 2026-10-21" |
+| F5: APM/SSLO also Configuration utility 7.5; no fixes | K000163821 (Playwright) | 10:11 | browser | "BIG-IP (APM, SSLO) 21.x 21.1.0 None High/7.5 (CVSS v3.1) The Configuration utility" |
+| Citrix unchanged | support.citrix.com (Playwright) | 10:11 | browser | notice text unchanged, no bulletin listed |
+| HestiaCP hestia-php released | GitHub issue #5817 | 10:09 | raw | "An update for Hestia-php and hestia-nginx has been released for Ubuntu Jammy (22.04) and up Debian Bookworm (12) and up" |
+| CloudLinux post changed back | blog.cloudlinux.com (3 uncached requests, cf-cache-status MISS) | 10:10 | raw | now "Last updated 21 October 2026, 23:00 UTC"; "on CloudLinux 7, 8 and 9, fixed packages are not in the CloudLinux repositories yet" (at 06:13 UTC the page said "last updated 22 October 2026, 06:00 UTC") |
+| Alpine package versions | pkgs.alpinelinux.org package pages | 10:13 | raw | v3.24 php85-fpm 8.5.12-r0 (2026-10-21 16:29), php84-fpm 8.4.27-r0, php83-fpm 8.3.36-r0; v3.23 php85-fpm 8.5.12-r0 (2026-10-22 08:39), php83-fpm 8.3.36-r0, php84-fpm 8.4.21-r0; v3.22 php84 8.4.16-r0, php83 8.3.29-r0, php82 8.2.33-r0 |
+| Checkmk Werk #19262 | checkmk.com/werk/19262 | 10:14 | raw | "Only users running Checkmk as a Docker container are affected. For all other installations, Checkmk uses the PHP packages of your Linux distribution"; "Affected Checkmk Versions 2.5.0 2.4.0 2.3.0" |
+| Checkmk releases / appliance | forum.checkmk.com JSON (posts by Checkmk-Announcement, staff=true) | 10:14 | JSON | 2.4.0p38 and 2.5.0p17 list "19262 SEC: Docker image: Rebuild with patched PHP (PHP2Shell)"; firmware 1.7.25 "contains fixes for the PHP vulnerabilities CVE-2026-109618 & CVE-2026-109619" |
+| Zabbix Docker | GitHub zabbix/zabbix-docker #1982 + Docker Hub API | 10:13 | API | dotneft (COLLABORATOR) 2026-10-22T00:47Z: "all latest images will be rebuilt today"; user report: "alpine-7.0.32 … php 8.5.11", "alpine-7.0-latest … php 8.5.12"; zabbix-web-nginx-pgsql `*-latest` last_updated 2026-10-22T07:14–07:38Z |
+| Zabbix advisory | zabbix.com/security_advisories | 10:13 | raw | no PHP2Shell entry; forum thread blocked (bot check) — **not verified** |
+| Centreon notice | thewatch.centreon.com | 10:13 | raw | "Centreon does not provide or maintain the PHP packages installed on user platforms." (dated October 21, 2026) |
+| GLPI | glpi-project.org blog | 10:13 | raw | "any web server hosting a GLPI instance remains vulnerable until the server's underlying PHP engine is patched"; "every GLPI Cloud server is running a patched, secure PHP version" |
+| Nagios | nagios.com security disclosures + XI changelog | 10:13 | raw | no PHP2Shell / CVE match |
+| Icinga, Cacti, LibreNMS | icinga.com/blog, community.icinga.com search, Cacti GitHub advisories, LibreNMS releases + forum search | 10:13 | raw / JSON | no PHP2Shell / CVE match |
+| Implementation languages | GitHub languages API | 10:14 | API | ansible/ansible Python 86 %; ansible/awx Python 98 %; zabbix/zabbix PHP 14 %; icingaweb2 PHP 84 %; cacti PHP 62 %; librenms PHP 88 %; glpi PHP 84 %; centreon PHP 72 %; nagioscore C 75 % + `html/index.php.in, main.php, side.php`; rundeck Groovy/Java; semaphore Go |
+| Ansible not in Red Hat VEX | VEX product tree | 10:14 | JSON | products: RHEL, OpenShift AI, OpenShift Dev Spaces, Hardened Images — no Ansible product |
 
 ## Fetch log (raw downloads)
 
@@ -149,3 +173,46 @@
 | 2026-10-22T06:24:06Z | zscaler | 200 | 17579 | https://www.zscaler.com/blogs/security-research/cve-2026-109618-and-cve-2026-109619-php-vulnerable-unauthenticated-rce |
 | 2026-10-22T06:25:26Z | directadmin | 200 | 8560 | https://forum.directadmin.com/threads/critical-php-updates.82726/page-3 |
 | 2026-10-22T06:25:26Z | hestia | 200 | 13225 | https://github.com/hestiacp/hestiacp/issues/5817 |
+| 2026-10-22T10:10:01Z | debian | 200 | 1738 | https://security-tracker.debian.org/tracker/CVE-2026-109618 |
+| 2026-10-22T10:10:01Z | netgate | 200 | 9481 | https://www.netgate.com/blog/critical-php-security-update |
+| 2026-10-22T10:10:01Z | suse | 200 | 20311 | https://www.suse.com/security/cve/CVE-2026-109618.html |
+| 2026-10-22T10:10:02Z | elts | 200 | 2238 | https://deb.freexian.com/extended-lts/tracker/CVE-2026-109618 |
+| 2026-10-22T10:10:02Z | usn1 | 200 | 5079 | https://ubuntu.com/security/notices/USN-8948-1 |
+| 2026-10-22T10:10:01Z | fortipsirt | 200 | 9018 | https://fortiguard.fortinet.com/psirt/FG-IR-26-186 |
+| 2026-10-22T10:10:02Z | ubuntucve | 200 | 5470 | https://ubuntu.com/security/CVE-2026-109618 |
+| 2026-10-22T10:10:02Z | usn2 | 200 | 7006 | https://ubuntu.com/security/notices/USN-8948-2 |
+| 2026-10-22T10:10:02Z | alma | 200 | 16091 | https://almalinux.org/blog/2026-10-21-php2shell-cve-2026-109618-cve-2026-109619/ |
+| 2026-10-22T10:10:01Z | wgsa | 200 | 2290 | https://psirt.watchguard.com/WGSA-2026-0032/ |
+| 2026-10-22T10:10:01Z | pan | 200 | 6762 | https://security.paloaltonetworks.com/CVE-2026-109618 |
+| 2026-10-22T10:10:02Z | oracle | 200 | 2635 | https://linux.oracle.com/cve/CVE-2026-109618.html |
+| 2026-10-22T10:10:02Z | ciq | 200 | 17098 | https://kb.ciq.com/article/security-advisories/cve-php2shell-mitigation |
+| 2026-10-22T10:10:01Z | trend | 200 | 10980 | https://success.trendmicro.com/en-US/solution/KA-0024789 |
+| 2026-10-22T10:10:02Z | cloudlinux | 200 | 33800 | https://blog.cloudlinux.com/php-cve-2026-109618-and-cve-2026-109619 |
+| 2026-10-22T10:10:02Z | awsbull | 200 | 11793 | https://aws.amazon.com/security/security-bulletins/2026-143-aws/ |
+| 2026-10-22T10:10:02Z | gcp | 200 | 12721 | https://cloud.google.com/blog/products/identity-security/responding-to-core-php-vulnerabilities-cve-2026-109618-cve-2026-109619 |
+| 2026-10-22T10:10:02Z | alas | 200 | 2142 | https://explore.alas.aws.amazon.com/CVE-2026-109618.html |
+| 2026-10-22T10:10:03Z | cfpost | 200 | 19992 | https://blog.cloudflare.com/php-vulnerabilities-waf-protection/ |
+| 2026-10-22T10:10:01Z | cisco | 200 | 8335 | https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-php-october26-Jj384Daq |
+| 2026-10-22T10:10:03Z | rhsb | 200 | 6684 | https://access.redhat.com/security/vulnerabilities/RHSB-2026-013 |
+| 2026-10-22T10:10:03Z | watchtowr | 200 | 15011 | https://watchtowr.com/intelligence/php-remote-code-execution-php2shell/ |
+| 2026-10-22T10:10:03Z | amazonti | 200 | 12175 | https://aws.amazon.com/blogs/security/amazon-threat-intelligence-identifies-php2shell-exploitation-prior-to-public-disclosure-in-madpot/ |
+| 2026-10-22T10:10:03Z | zscaler | 200 | 17587 | https://www.zscaler.com/blogs/security-research/cve-2026-109618-and-cve-2026-109619-php-vulnerable-unauthenticated-rce |
+| 2026-10-22T10:10:03Z | sophos | 000 | 0 | https://www.sophos.com/en-us/security-advisories/sophos-sa-20261021-php2shell |
+| 2026-10-22T10:10:02Z | cpanelea4 | 200 | 86417 | https://docs.cpanel.net/changelogs/easyapache-4-change-log-25/ |
+| 2026-10-22T10:10:03Z | remi9 | 200 | 6514 | https://rpms.remirepo.net/enterprise/9/modular/x86_64/repoview/php-fpm.html |
+| 2026-10-22T10:10:03Z | remi8 | 200 | 7372 | https://rpms.remirepo.net/enterprise/8/modular/x86_64/repoview/php-fpm.html |
+| 2026-10-22T10:10:03Z | remi10 | 200 | 6532 | https://rpms.remirepo.net/enterprise/10/modular/x86_64/repoview/php-fpm.html |
+| 2026-10-22T10:10:03Z | hestia | 200 | 14227 | https://github.com/hestiacp/hestiacp/issues/5817 |
+| 2026-10-22T10:10:02Z | msblog | 200 | 9895 | https://techcommunity.microsoft.com/blog/azurenetworksecurityblog/addressing-php2shell-cve-2026-109618-and-cve-2026-109619-upgrade-guidance-and-az/4566623 |
+| 2026-10-22T10:10:03Z | certeu | 200 | 7288 | https://cert.europa.eu/publications/security-advisories/2026-018/ |
+| 2026-10-22T10:12:27Z | zbxforum | 403 | 18 | https://www.zabbix.com/forum/zabbix-help/517840-critical-php-cve-released-and-patched-today-when-will-zabbix-docker-catch-up |
+| 2026-10-22T10:12:27Z | zbxsec | 200 | 6377 | https://www.zabbix.com/security_advisories |
+| 2026-10-22T10:12:27Z | nagiossec | 200 | 5775 | https://www.nagios.com/security-disclosures/ |
+| 2026-10-22T10:12:27Z | checkmkwerks | 200 | 92925 | https://checkmk.com/werks |
+| 2026-10-22T10:12:27Z | nagiosxicl | 200 | 343871 | https://www.nagios.com/changelog/nagios-xi/ |
+| 2026-10-22T10:12:28Z | cactisec | 200 | 4017 | https://github.com/Cacti/cacti/security/advisories |
+| 2026-10-22T10:12:27Z | centreon | 200 | 7440 | https://thewatch.centreon.com/latest-security-bulletins-64/security-notice-centreon-assessment-of-critical-php-vulnerabilities-6007 |
+| 2026-10-22T10:12:28Z | librenmsrel | 200 | 24792 | https://github.com/librenms/librenms/releases |
+| 2026-10-22T10:12:27Z | icingablog | 200 | 131920 | https://icinga.com/blog/ |
+| 2026-10-22T10:12:27Z | glpi | 200 | 17773 | https://www.glpi-project.org/en/%F0%9F%9A%A8-critical-php2shell-php-vulnerabilities-cve-2026-109618-cve-2026-109619-what-you-need-to-know-for-your-glpi-server/ |
+| 2026-10-22T10:14:09Z | werk19262 | 200 | 2321 | https://checkmk.com/werk/19262 |

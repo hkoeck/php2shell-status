@@ -20,8 +20,9 @@ You are maintaining `README.md` in this repository: a status overview of PHP2She
 4. **Real timestamps.** Run `date -u` when you check each source and record that time. Never estimate or round a check time into the future.
 5. **Distinguish three states:** *statement found*; *checked, nothing found (UTC time, where you looked)*; *could not check (reason: login, bot protection, 403, page not rendering)*.
 6. **Log every claim** in `VERIFICATION.md` as a table row: claim | source URL | UTC time | method (raw / browser / JSON) | verbatim evidence.
-7. **Keep the structure:** AI-generated warning banner at the top; status line (date + UTC time + update number) first; current status only in `README.md`. Enterprise products go in sections 1–4 and 6; hosting panels, NAS/SMB and hobby distributions go in section 5. Do not delete verified rows; update them. Put the history entry at the **top** of `CHANGELOG.md`, not in the README.
-8. **Re-check the "Key facts"**, especially exploitation: CISA KEV, CISA SSVC (CVE record), vendor threat-intel reports. Then update "Known gaps".
+7. **Markdown:** put every package version in backticks — Debian versions contain `~`, which GitHub otherwise renders as strikethrough. Write "approx." instead of "~".
+8. **Keep the structure:** AI-generated warning banner at the top; status line (date + UTC time + update number) first; current status only in `README.md`. Enterprise products go in sections 1–5 and 7; hosting panels, NAS/SMB and hobby distributions go in section 6. Do not delete verified rows; update them. Put the history entry at the **top** of `CHANGELOG.md`, not in the README.
+9. **Re-check the "Key facts"**, especially exploitation: CISA KEV, CISA SSVC (CVE record), vendor threat-intel reports. Then update "Known gaps".
 
 ## Useful machine-readable sources
 

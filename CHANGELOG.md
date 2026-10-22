@@ -2,6 +2,13 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
+## Update 13 – 22 Oct 2026, 10:20 UTC
+
+- **Linux section restored to one row per release** (Distribution / PHP / Status / Fix type) and all package versions put in code formatting. The Debian row was broken: GitHub rendered the text between the `~` in `8.4.27-1~deb13u1` … `8.2.35-1~deb12u1` as strikethrough
+- **New section 5 "Monitoring and IT automation"**: Checkmk (Werk #19262, Docker image and appliance 1.7.25 fixed), Zabbix (Docker `*-latest` rebuilt; pinned tags may still ship PHP 8.5.11), Centreon (notice: PHP comes from the OS), GLPI (host PHP must be patched; Cloud patched), Nagios XI/Core, Icinga Web 2, Cacti, LibreNMS (no statement); Ansible/AWX/AAP, Rundeck and Semaphore contain no PHP
+- **Status changes since update 12:** Fortinet moved FortiClient EMS (and more products) to "not impacted"; Oracle Linux 8 fixed (ELSA-2026-87080); HestiaCP released fixed hestia-php; F5 lists APM/SSLO additionally under Configuration utility (7.5); Alpine statuses verified from pkgs.alpinelinux.org (3.24 fixed, 3.23 partly, 3.22 not); CloudLinux post now contradicts its earlier version
+- Unchanged at 10:10 UTC: CISA KEV (not listed), CISA SSVC, Red Hat VEX rev 3, Palo Alto (no fixes), Cisco v1.1, Citrix (notice only), SUSE, Debian, Ubuntu, Rocky, CIQ, Amazon, AWS bulletin, Docker Official Image
+
 ## Update 12 – 22 Oct 2026, 06:32 UTC
 
 - **Enterprise focus:** new sections for WAF/IPS/scanner content, cloud platforms and government advisories; hosting panels, NAS and hobby distros condensed into section 5
