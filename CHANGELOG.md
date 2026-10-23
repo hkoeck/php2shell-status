@@ -2,6 +2,20 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
+## Update 22 – 23 Oct 2026, 11:25 UTC
+
+Re-check of all 110 sources (curl diff 11:09–11:11 UTC, browser-only pages 11:13–11:19 UTC, feeds), plus new vendor statements found via NCSC-NL commits and verified at the vendor.
+
+- **Palo Alto:** PAN-OS hotfix versions with ETAs 26–30 Oct published (none released yet); Panorama and WF-500 still TBD.
+- **Trend Micro:** new KA-0024802 – Apex Central, Apex One on-prem, TMWS and Deep Discovery (DDI/DDAN/DDEI) **impacted**, mitigation in development; Apex One SaaS emergency maintenance 23 Oct; long not-impacted list.
+- **Delta Controls** (building automation) added: enteliWEB patch for 4.29+, controller firmware patches in development.
+- **Red Hat:** EUS/AUS/TUS php:7.4 errata for RHEL 8.4/8.6/8.8 and RHEL 10.0 E2S (RHSA-2026:88532/88533/88565/88561); RHEL 9 php:8.4 and RHEL 7 (109619) still unfixed.
+- **Fortinet:** four more products not impacted; new IPS/endpoint/FortiWeb signature IDs.
+- **WP Engine:** statement found (all sites patched) – removed from Known gaps.
+- Smaller: Imunify360 ruleset 8.88, TuxCare "available now", Laravel Forge 5.6–8.5, Zabbix Docker issue closed, Elastic Beanstalk 4.13.13, Qualys QID 45110 and distro QIDs, CloudLinux `alt-php-internal` note, NCSC-UK wording.
+- **Unchanged:** F5, Check Point (fix still due "by October 23, 17:00 GMT"), Citrix, Quest, Sophos, Broadcom, QNAP, Upsun, Kaseya, Siemens, KEV/SSVC/NVD.
+- **Still not verified:** Ivanti ICS/EPMM/CSA KBs and Broadcom 39411/39421 (login); Adobe Commerce, Juniper, A10, Nagios, Icinga, Cacti, LibreNMS app (no statement); Sangoma (forum only).
+
 ## Update 21 – 23 Oct 2026, 04:16 UTC
 
 - **Tenable Security Center and Tenable Enclave Security** added (section 5): patch SC-202610.1 (22 Oct) updates their bundled PHP to `8.2.35` (TNS-2026-28 / TNS-2026-29). Found in the Tenable FAQ diff of update 20 but missed there.
