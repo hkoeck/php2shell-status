@@ -2,6 +2,30 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
+## Update 20 – 23 Oct 2026, 04:13 UTC
+
+Full re-check: all 100 previously fetched URLs re-downloaded 03:45–03:47 UTC and diffed against the 22 Oct 20:21 UTC copies, automated claim check re-run, JavaScript/bot-protected pages re-read in headless or headed Chrome (03:53–04:12 UTC), feeds re-queried; rows without a README link (Progress KBs, Ivanti KB, Arch, Cacti, LibreNMS, F5 signatures, Qualys, Upsun) re-checked separately. Then a deeper search for vendors without a statement: vendor portals and status pages (Juniper, A10, Siemens, Adobe, WP Engine, Sangoma/FreePBX, Broadcom, Ivanti), NCSC-NL commits since 22 Oct 15:04 UTC, web search as leads only.
+
+**Status changes**
+- **Cisco v1.4** (22 Oct 23:00 GMT): first products **vulnerable**: Expressway / Expressway Select (fix 15.5.21, TBD) and URWB (fix 27.1.1, Feb 2027, admin auth required). Many products moved to not vulnerable (ISE, Hypershield, ASA/FMC/FTD, IOS/XE/XR/NX-OS, …); 9 still under investigation. Splunk has its own advisory SVD-2026-1013 (no product known affected).
+- **Broadcom Enterprise Security Group** (new): **Carbon Black App Control Server and Symantec Endpoint Protection Manager affected** (notification 39404; detail advisories login-gated).
+- **Palo Alto**: WildFire WF-500 / WF-500-B affected (ETA TBD); WildFire Cloud remediated 22 Oct; XDR Broker VM, XCORE, Strata Cloud Manager not affected.
+- **Check Point** (SK modified 23 Oct): new note "permanent fix … by October 23, 17:00 GMT"; the Solution field still says 11 Nov; the automatic-mitigation announcement was removed without a release confirmation.
+- **Red Hat**: RHEL 7 not affected by 109618, affected by 109619 (no fix yet); RHEL 6 affected, out of support scope (was: under investigation).
+- **SUSE**: SLES 16.0 fixed (`8.4.27-160000.1.1`); 16.1 affected; new SLES 12 php74 fix (`7.4.33-1.74.1`).
+- **F5** (23 Oct): BIG-IP Next CNF not vulnerable; EOB and API Security LE added as not vulnerable; only AI Gateway still researching.
+- **Ivanti**: Ivanti-employee forum answers: EPMM/Sentry and vTM/Services Director not affected; **Cloud Services Application needs a PHP update**; AOD WAF signature updates may be interrupted.
+- **Barracuda**: Message Archiver not affected. **Quest**: SMA 15.0 CU5 / 15.1 CU2 in QA. **Citrix**: NetScaler WAF signature v186. **Siemens**: ProductCERT statement (evaluating). **Acquia**: incident resolved. **AWS**: WorkMail done, Beanstalk 8.2–8.5 fixed, AWS WAF PHP Managed Rule Group. **CloudLinux**: alt-php builds with PHP.net version numbers in stable.
+- New rows: SolarWinds (Pingdom, compensating controls), Kaseya (investigating), TuxCare ELS (closes a known gap), LibreNMS Docker 26.10.2-r1, Fastly Next-Gen WAF virtual patch, Broadcom/Symantec detections, Corelight, Vercel WAF, Citrix WAF; Trend Micro TippingPoint filter 48534; Qualys QIDs 520310 and 389120; Splunk ESCU; CISA alert.
+- Key facts: exploitation bullet rebalanced (Rapid7: no ITW observed, only attempts; Sansec: public exploits do not work against a default PHP installation; CISA: none observed at publication).
+
+**Corrections**
+- Amazon Threat Intelligence changed its wording from "is now being broadly exploited" to "is now seeing broad exploitation attempts in the wild"; quote updated.
+- The Ivanti EPMM statement was posted by an Ivanti employee, not a community member.
+- Upsun link pointed to the status home page, which no longer shows the incident; replaced with the incident permalink.
+
+**Still not verified**: Ivanti Connect Secure / EPMM / CSA KBs and Broadcom advisories 39411 / 39421 (login), WP Engine, Adobe Commerce, Sangoma (forum only). No statement: Juniper, A10, Nagios, Icinga, Cacti, LibreNMS app.
+
 ## Update 19 – 22 Oct 2026, 21:02 UTC
 
 - Check Point sk1000302 re-read at 21:02 UTC, after the announced deadline: the automatic mitigation is still announced in the future tense ("will release … before October, 22, 2026 at 21:00 GMT"), no confirmation of release; last modified 2026-10-22. Manual mitigation remains the documented option until Check Point confirms
