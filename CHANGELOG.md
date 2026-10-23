@@ -6,6 +6,7 @@
 
 Re-check of all 119 sources (curl diff 16:20–16:22 UTC against the 11:09 copies, browser-only pages 16:25–16:35 UTC, feeds), plus new leads from NCSC-NL commits since 11:00 UTC, verified at the vendor page.
 
+- **Correction (16:42 UTC, same day):** the browser time ranges in the first commit of this update (16:25–16:27, 16:27–16:30, 16:30–16:33) were narrowed to the recorded `date -u` anchors. The Cisco "also new" list included products already in v1.4. Siemens was restored to "under investigation" for its other products. CVE-2026-109619 NVD score corrected to 8.1. Quoted SUSE timestamp: the page gives no time zone.
 - **New related CVE-2026-115560** (PHP informational advisory, 23 Oct): session upload progress plus a runtime switch of `session.serialize_handler`. It is not fixed by the 21 Oct releases, and the fix comes with the next regular release. Keep `session.upload_progress.enabled=0` even after patching. No CVE record or NVD entry yet. Added to Key facts, CERT-EU (v1.2), CCCS (Update 1) and Cloudflare (rule #6).
 - **Correction, Quest KACE (mitigation):** Quest withdrew the port 52230 advice. It now says to "block all inbound web traffic, including ports 80, 443, and 52230". The old README text ("use port 52230 and keep 443 closed") was replaced, and the timeline was updated (SDA 9.3 hotfix queued for QA, 23 Oct "Pending update").
 - **Correction, Palo Alto:** Panorama is now in the PAN-OS rows ("PAN-OS / Panorama") with the same hotfix ETAs of 26–30 Oct. The earlier "Panorama: all versions, ETA TBD" was removed. PAN made this change without a revision-history entry.
@@ -13,7 +14,7 @@ Re-check of all 119 sources (curl diff 16:20–16:22 UTC against the 11:09 copie
   - New vulnerable product: Duo Access Gateway, fixed in 3.2.0.
   - Expressway and URWB: workarounds are in the bugs.
   - CX Cloud, IoT Control Center, Meraki Dashboard and Slido moved to not vulnerable.
-  - Seven product scopes are newly under investigation (SD-WAN Analytics/Portal/Validator, SD-AVC, Catalyst 1300, SD-WAN Cloud OnRamp, SSM On-Prem).
+  - Eight product scopes are newly under investigation (SD-WAN Analytics/Portal/Validator, SD-AVC, SD-AVC Cloud Connector, Catalyst 1300, SD-WAN Cloud OnRamp, SSM On-Prem).
   - New scope sentence: "not listed within this advisory … not affected".
 - **NetApp ONTAP 9 added** (NTAP-20261021-0021 v3.0, published 21–22 Oct and missed until now): affected by CVE-2026-109618 only, no patch, three workarounds.
 - **Siemens:**
@@ -30,7 +31,7 @@ Re-check of all 119 sources (curl diff 16:20–16:22 UTC against the 11:09 copie
   - VMware KB: list of unaffected products.
   - Azure App Service on Azure Stack Hub.
 - **Check Point:** no permanent fix at 16:37 UTC. The SK still says "by October 23, 17:00 GMT", so the deadline had not yet passed.
-- **Unchanged:** F5, QNAP, Sophos, Citrix (27 Oct), Broadcom 39404, HPE ClearPass, Akamai, Plesk, KEV/SSVC/NVD.
+- **Unchanged:** F5, QNAP, Sophos, Citrix (27 Oct), Broadcom 39404, HPE ClearPass, Akamai, Plesk, Kaseya, KEV/SSVC. **NVD:** CVE-2026-109619 now "Analyzed" with NVD CVSS 3.1 **8.1** (`AC:H`), not 9.8; Key facts corrected.
 - **NCSC-NL leads:**
   - Adopted: NetApp.
   - Already covered: HPE ClearPass, CloudLinux, TuxCare, Plesk, RHEL 9, HestiaCP, Nextcloud AIO.
@@ -38,7 +39,7 @@ Re-check of all 119 sources (curl diff 16:20–16:22 UTC against the 11:09 copie
   - **Not adopted:** SEPM fixed builds `14.3.27716.10000` / `14.4.494.0000`. They come from a GitHub issue, NCSC-NL says they were "not independently verified", and the Broadcom advisory requires a login. Named in Known gaps.
   - **Not adopted (single apps and Docker images, outside enterprise scope, not verified):** FileCloud, FileRun, FrankenPHP static builds, GLPI images, Grav, grommunio, Part-DB, phpLDAPadmin, Roundcube image, Shaarli, Shlink.
 - **Not verified / not re-read:**
-  - The Adobe and Kaseya pages gave no usable text this pass; the earlier results are kept.
+  - The Adobe page gave no usable text this pass; the earlier result is kept. Kaseya was checked via the status-page API (still "investigating").
   - Ivanti and Broadcom detail KBs require a login.
   - The Ivanti Incapptic KB was seen only as a search snippet.
 
