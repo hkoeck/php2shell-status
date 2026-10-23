@@ -2,7 +2,13 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
-## Update 22 – 23 Oct 2026, 11:25 UTC
+## Update 23 – 23 Oct 2026, follow-up to update 22
+
+- **Correction (provenance):** update 22 stated 11:25 UTC, a time not yet reached when it was committed (11:21:09 UTC); status line, changelog header and two range endpoints corrected to recorded times.
+- Render added to the PaaS row (Docker-only; customers rebuild). Trend Micro moved in Known gaps from "under investigation" to "affected, fix in development".
+- NCSC-NL leads since 22 Oct 22:50 UTC: all 59 added rows reviewed. Adopted after reading the vendor page: Trend Micro, Delta Controls, WP Engine, Elastic Beanstalk, Render. Already covered: Cisco v1.4, Fortinet, F5, SUSE, Synology, Tenable, N-able, Azure App Service, Sophos MyUTM. **Not adopted** (developer tools / small hosting / single apps, outside enterprise scope, not verified): DDEV, Nixpkgs, Server Side Up images, UnoPim, TransIP, phpMyFAQ, Unraid 7.3.4.
+
+## Update 22 – 23 Oct 2026, 11:21 UTC
 
 Re-check of all 110 sources (curl diff 11:09–11:11 UTC, browser-only pages 11:13–11:19 UTC, feeds), plus new vendor statements found via NCSC-NL commits and verified at the vendor.
 
