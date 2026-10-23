@@ -2,6 +2,12 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
+## Update 25 – 23 Oct 2026, 18:24 UTC
+
+Only Check Point re-checked (on request); no other source was re-read.
+
+- **Check Point:** the promised permanent fix "by October 23, 17:00 GMT" is not announced in sk1000302 as of 18:24 UTC. The SK text is unchanged since 11:09 UTC, and the solution field still says 11 Nov (Jumbo Hotfix). The CPAI-2026-15172 IPS advisory is unchanged.
+
 ## Update 24 – 23 Oct 2026, 16:38 UTC
 
 Re-check of all 119 sources (curl diff 16:20–16:22 UTC against the 11:09 copies, browser-only pages 16:25–16:35 UTC, feeds), plus new leads from NCSC-NL commits since 11:00 UTC, verified at the vendor page.

@@ -323,6 +323,13 @@ Method: the 119 URLs of the update-22 sweep re-downloaded with curl 16:20–16:2
 | Kaseya unchanged | status.kaseya.com/api/v2/incidents.json | 16:41 | JSON | incident tkp9hhttm8xh status "investigating", updated_at 2026-10-22T09:29:32-04:00 |
 | Update-24 corrections | own records | 16:41–16:44 | – | browser batch ranges narrowed to recorded `date -u` anchors (16:25:39–16:26:55, 16:27:10–16:29:19, Quest by 16:29:58, 16:30:22–16:31:35); Cisco "also new" list reduced to entries with `+` lines in the 11:09→16:20 diff |
 
+## Update 25 check (23 Oct 2026)
+
+| Claim | Source | UTC (23 Oct) | Method | Evidence |
+|---|---|---|---|---|
+| Check Point deadline passed, SK unchanged | support.checkpoint.com/results/sk/sk1000302 | 18:24 | raw (`__NEXT_DATA__`) | extracted text identical to the 16:37 copy (empty diff, same 38141 bytes); still "Check Point is expecting to deliver a permanent fix based on the latest PHP code by October 23, 17:00 GMT."; `"lastModified":"2026-10-23"` |
+| CPAI-2026-15172 unchanged | advisories.checkpoint.com | 18:24 | raw diff | empty diff against the 16:20 copy |
+
 ## Fetch log (raw downloads)
 
 | UTC | name | HTTP | bytes | URL |
