@@ -2,6 +2,46 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
+## Update 24 – 23 Oct 2026, 16:38 UTC
+
+Re-check of all 119 sources (curl diff 16:20–16:22 UTC against the 11:09 copies, browser-only pages 16:25–16:35 UTC, feeds), plus new leads from NCSC-NL commits since 11:00 UTC, verified at the vendor page.
+
+- **New related CVE-2026-115560** (PHP informational advisory, 23 Oct): session upload progress plus a runtime switch of `session.serialize_handler`. It is not fixed by the 21 Oct releases, and the fix comes with the next regular release. Keep `session.upload_progress.enabled=0` even after patching. No CVE record or NVD entry yet. Added to Key facts, CERT-EU (v1.2), CCCS (Update 1) and Cloudflare (rule #6).
+- **Correction, Quest KACE (mitigation):** Quest withdrew the port 52230 advice. It now says to "block all inbound web traffic, including ports 80, 443, and 52230". The old README text ("use port 52230 and keep 443 closed") was replaced, and the timeline was updated (SDA 9.3 hotfix queued for QA, 23 Oct "Pending update").
+- **Correction, Palo Alto:** Panorama is now in the PAN-OS rows ("PAN-OS / Panorama") with the same hotfix ETAs of 26–30 Oct. The earlier "Panorama: all versions, ETA TBD" was removed. PAN made this change without a revision-history entry.
+- **Cisco v1.5** (23 Oct 16:16 GMT):
+  - New vulnerable product: Duo Access Gateway, fixed in 3.2.0.
+  - Expressway and URWB: workarounds are in the bugs.
+  - CX Cloud, IoT Control Center, Meraki Dashboard and Slido moved to not vulnerable.
+  - Seven product scopes are newly under investigation (SD-WAN Analytics/Portal/Validator, SD-AVC, Catalyst 1300, SD-WAN Cloud OnRamp, SSM On-Prem).
+  - New scope sentence: "not listed within this advisory … not affected".
+- **NetApp ONTAP 9 added** (NTAP-20261021-0021 v3.0, published 21–22 Oct and missed until now): affected by CVE-2026-109618 only, no patch, three workarounds.
+- **Siemens:**
+  - SSA-566512: RUGGEDCOM APE1808 with PAN-OS is affected; customers should contact Siemens support.
+  - SSA-566435: a list of software products that are not affected.
+- **Nagios** now has a statement ("apply the PHP security updates provided by their Linux distribution vendor") and was removed from "no vendor statement".
+- **Trend Micro:** interim steps for Apex Central and Apex One on-prem (KA-0024815).
+- **Fortinet:** FortiDDoS-F moved to not impacted; FortiNDR Cloud, FortiMail Workspace Security and FortiEDR added as not impacted.
+- **OPNsense:** Business Edition is 26.4.2p4 (the post said p3 before); Community 26.1.11 was added.
+- **Red Hat:** RHEL 9.6 EUS (RHSA-2026:88720) and 9.4 E4S (RHSA-2026:88725). RHEL 9 php:8.4 and RHEL 7 (CVE-2026-109619) still have no fix.
+- **SUSE:** the openSUSE Leap 16.0 page lists both a fixed package and the status "Affected"; flagged as a contradiction. BCI PHP containers now ship php8 8.3.36.
+- **Smaller updates:**
+  - CloudLinux: ea-php builds with PHP.net version numbers.
+  - VMware KB: list of unaffected products.
+  - Azure App Service on Azure Stack Hub.
+- **Check Point:** no permanent fix at 16:37 UTC. The SK still says "by October 23, 17:00 GMT", so the deadline had not yet passed.
+- **Unchanged:** F5, QNAP, Sophos, Citrix (27 Oct), Broadcom 39404, HPE ClearPass, Akamai, Plesk, KEV/SSVC/NVD.
+- **NCSC-NL leads:**
+  - Adopted: NetApp.
+  - Already covered: HPE ClearPass, CloudLinux, TuxCare, Plesk, RHEL 9, HestiaCP, Nextcloud AIO.
+  - Cisco rows are based on v1.4 and are superseded by v1.5.
+  - **Not adopted:** SEPM fixed builds `14.3.27716.10000` / `14.4.494.0000`. They come from a GitHub issue, NCSC-NL says they were "not independently verified", and the Broadcom advisory requires a login. Named in Known gaps.
+  - **Not adopted (single apps and Docker images, outside enterprise scope, not verified):** FileCloud, FileRun, FrankenPHP static builds, GLPI images, Grav, grommunio, Part-DB, phpLDAPadmin, Roundcube image, Shaarli, Shlink.
+- **Not verified / not re-read:**
+  - The Adobe and Kaseya pages gave no usable text this pass; the earlier results are kept.
+  - Ivanti and Broadcom detail KBs require a login.
+  - The Ivanti Incapptic KB was seen only as a search snippet.
+
 ## Update 23 – 23 Oct 2026, follow-up to update 22
 
 - **Correction (provenance):** update 22 stated 11:25 UTC, a time not yet reached when it was committed (11:21:09 UTC); status line, changelog header and two range endpoints corrected to recorded times.
