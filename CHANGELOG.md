@@ -2,6 +2,11 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
+## Update 21 – 23 Oct 2026, 04:16 UTC
+
+- **Tenable Security Center and Tenable Enclave Security** added (section 5): patch SC-202610.1 (22 Oct) updates their bundled PHP to `8.2.35` (TNS-2026-28 / TNS-2026-29). Found in the Tenable FAQ diff of update 20 but missed there.
+- **Correction (provenance):** several per-row check minutes in update 20 (README and VERIFICATION) were reconstructed after the fact, and some were out of order (e.g. Acquia/Plesk logged before the KEV batch they followed; CISA/SolarWinds/Kaseya logged after a later batch). All update-20 check times are now the ranges between recorded `date -u` calls (03:45–03:47, 03:47–03:51, 03:51–03:57, 03:57–03:58, 03:59–04:05, 04:05–04:12 UTC). No status claim changed.
+
 ## Update 20 – 23 Oct 2026, 04:13 UTC
 
 Full re-check: all 100 previously fetched URLs re-downloaded 03:45–03:47 UTC and diffed against the 22 Oct 20:21 UTC copies, automated claim check re-run, JavaScript/bot-protected pages re-read in headless or headed Chrome (03:53–04:12 UTC), feeds re-queried; rows without a README link (Progress KBs, Ivanti KB, Arch, Cacti, LibreNMS, F5 signatures, Qualys, Upsun) re-checked separately. Then a deeper search for vendors without a statement: vendor portals and status pages (Juniper, A10, Siemens, Adobe, WP Engine, Sangoma/FreePBX, Broadcom, Ivanti), NCSC-NL commits since 22 Oct 15:04 UTC, web search as leads only.
