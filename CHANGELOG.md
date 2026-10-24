@@ -44,6 +44,14 @@ Re-check of all 125 sweep sources (curl diff 06:16–06:18 UTC against the 23 Oc
   - Fortinet, SonicWall, A10, Icinga, Siemens CSAF.
   - CVE-2026-115560 still has no CVE record, NVD entry or Red Hat VEX.
   - NCSC-NL: no new commits since 23 Oct 12:50 UTC.
+- **Correction (same update, follow-up commit):**
+  - Kaseya was listed both under "under investigation" and "affected"; it is now only under "affected, fix in development".
+  - Juniper Junos OS moved from "fixes announced" to "fix in development (no date)".
+  - "Missed by CVE-ID searches" replaced with the recorded fact: the anonymous portal search still does not return JSA112681 (06:42–06:43 UTC).
+  - RHEL 9 php:8.2 versions written out in full.
+  - F5 row states the attacker model again (APM data plane unauthenticated, Configuration utility authenticated).
+  - CISA alert update of 23 Oct (SIGMA rule; "has not observed successful exploitation") added.
+  - Ten sources outside the sweep fetched at 06:42 UTC and named in the status line.
 - **Not verified / not re-read:**
   - Adobe returned HTTP 403.
   - The Ivanti Connect Secure and EPMM KBs and the Broadcom detail advisories (39411, 39421, 39429) need a login.
