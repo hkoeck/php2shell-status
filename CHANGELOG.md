@@ -2,6 +2,24 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
+## Update 27 – 24 Oct 2026, 22:06 UTC
+
+Re-check of all 132 sweep URLs (curl diff 21:53–21:56 UTC against the 24 Oct 06:16 UTC copies), browser-only pages 21:57–22:04 UTC, feeds 21:57 UTC.
+
+- **QNAP V1.1:** QTS, QuTS hero and QuTScloud fixed (builds of 20261023). Note Station 3, QNE (ADRA), QVR Surveillance and TVR OS are still "To be announced". QuMagie is in the affected list but not in the fix table.
+- **NetApp v4.0:** ONTAP 9.16.1P16HF1 and 9.17.1P11HF1 fix the issue. Other ONTAP 9 lines have no fix named yet.
+- **Ubiquiti UISP added:** UISP Application 3.1.70 fixes both CVEs in the PHP runtime of the UISP CRM module.
+- **GetPageSpeed added** (Linux repositories): fixed EL7 rebuilds of Remi's PHP 5.6–8.4 packages for CentOS 7.
+- **Rapid7:** product status page; none of its products are affected.
+- **Qualys:** blog updated 24 Oct with distro QIDs for Debian, Ubuntu, Alpine, Arch, more Rocky and Amazon Linux QIDs. CVE-2026-115560 QIDs are still "To be released soon".
+- **Known gaps:** QNAP and NetApp moved from "fix announced" / "workarounds only" to the remaining products only.
+- **Counting fix:** earlier status lines said "125 URLs"; that counted list lines incl. one blank line and two duplicates. The sweep now covers 132 distinct URLs, incl. the ten added in update 26, which are now diffed.
+- **Unchanged:**
+  - F5 (K000163821 Final, CVE-2026-115560 still researched), PAN (no hotfix yet, ETAs 26–30 Oct), Cisco v1.6, Check Point, Juniper, HPE, Quest, Citrix (fixes 27 Oct), Sophos, Broadcom, Kaseya, Trend Micro, Barracuda, CloudLinux contradiction.
+  - KEV catalog 2026.10.23 lists neither CVE; SSVC "Exploitation: none"; Red Hat VEX unchanged.
+  - CVE-2026-115560 still has no CVE record, NVD entry or Red Hat VEX. NCSC-NL: no new commit since 23 Oct 12:50 UTC.
+- **Not verified / not re-read:** Adobe (HTTP 403 again), login-gated Ivanti and Broadcom detail KBs, Juniper portal search (last run 06:42 UTC).
+
 ## Update 26 – 24 Oct 2026, 06:36 UTC
 
 Re-check of all 125 sweep sources (curl diff 06:16–06:18 UTC against the 23 Oct 16:20 UTC copies, browser-only pages 06:16–06:33 UTC, feeds). F5 was checked first on request.
