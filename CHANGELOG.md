@@ -2,6 +2,53 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
+## Update 26 – 24 Oct 2026, 06:36 UTC
+
+Re-check of all 125 sweep sources (curl diff 06:16–06:18 UTC against the 23 Oct 16:20 UTC copies, browser-only pages 06:16–06:33 UTC, feeds). F5 was checked first on request.
+
+- **F5: fixes released.** BIG-IP 21.1.0.4, 17.5.1.11 and 17.1.3.7 (Critical Release of 23 Oct, K000163848). K000163821 is now marked "Final"; F5 AI Gateway moved to not vulnerable. New K000163878 for CVE-2026-115560: BIG-IP and BIG-IQ are still being researched. F5's `.ini` mitigation files do not survive a TMOS upgrade, so check `session.upload_progress.enabled` again after upgrading. The README no longer quotes "legitimate, authenticated users", which is not in the current text. Inconsistency flagged: K000163848 lists BIG-IP Next for Kubernetes 2.4.2, a product K000163821 calls not vulnerable.
+- **Exploitation (Key facts):**
+  - Unit 42 (upd. 23 Oct) describes a post-exploitation case at a European government entity: password hashes and MFA secrets taken within two hours of initial exploitation. The paragraph does not name the initial access vector.
+  - Zscaler decoys: 1,156 exploitation attempts from 156 IPs against 70 organisations in the first 48 hours.
+  - Google/Mandiant forensics guidance; Datadog analysis of multiple public PoCs.
+  - KEV catalog 2026.10.23 still lists neither CVE; CISA SSVC still "Exploitation: none".
+- **Check Point: hotfix released.** "October, 23, 2026 at 18:30 GMT update", for R82.10 (incl. 3900), R82 and R81.20. R82.20: "Coming soon". No Spark versions in the table. The check in update 25 (18:24 UTC) came just before this note.
+- **Juniper added** (JSA112681, 23 Oct, found via a link in the HPE bulletin): Junos OS vulnerable to CVE-2026-109618, will move to PHP 8.5.12, disable J-Web/JSC/fwAuth. SRX without PHP from 25.2R1. EVO, Session Smart Router, Junos Space and Mist not vulnerable. Removed from "no vendor statement".
+- **HPE ClearPass rev.2:** hotfix patches for 6.14.1 and 6.11.16 ("Final hotfixes … address the issue completely"); 6.14.1 and 6.11.16 without the hotfix are now listed as affected.
+- **Quest KACE:** SMA 15.0 CU5 (15.0.378) and 15.1 CU2 (15.1.177) released (23 Oct 17:03 UTC). SDA 9.3 hotfix ETA 27 Oct. Not affected by CVE-2026-115560.
+- **Palo Alto:** WildFire WF-500/WF-500-B corrected to not affected. Panorama is now covered by a note under the PAN-OS rows. Five more products (Prisma SD-WAN etc.) are not affected. The Threat ID list was extended (content 9162–9164). ETAs unchanged; no hotfix released yet.
+- **Cisco v1.6:** workarounds flag set. Catalyst Center, WAE and AppDynamics Enterprise Console / Virtual Appliance are not vulnerable. 11 products remain under investigation.
+- **Barracuda:** patches for SecureEdge and Firewall Insights. CloudGen Firewall not affected. Several cloud services remediated. Only MXDR is still under investigation.
+- **Broadcom ESG:** CloudSOC SpanVA Appliance affected (39429). CASB moved to not vulnerable.
+- **Kaseya:** product table published. VSA 10, BMS and vPenTest fully patched; 17 products, incl. VSA 9, under "Compensating Controls".
+- **Trend Micro:** Critical Patch ETA 30 Oct for DDI, DDAN and DDEI. Apex One SaaS "Addressed".
+- **Zscaler:** enterprise environment ruled out; removed from "under investigation".
+- **Red Hat:**
+  - RHEL 7 ELS fixed for CVE-2026-109619 (RHSA-2026:88693).
+  - RHEL 9.2 E4S (88659), 9.6 EUS php:8.2 (88834) and 9.4 E4S php:8.2 (88835).
+  - RHSB now has mitigation steps (on RHEL 7, disabling upload progress is "the only one required") and covers CVE-2026-115560.
+  - RHEL 9 php:8.4 still unfixed.
+- **Distributions and other platforms:**
+  - **CIQ:** all variants patched, incl. LTS 8.6 and CIQ Bridge (PHP 5.4 backport).
+  - **Debian forky:** fixed.
+  - **CloudLinux:** reversed its advice, now "keep the ELS ALT PHP repository enabled". The KB still shows the disable command; flagged as a contradiction.
+  - **AWS:** EMR on EC2 with Ganglia affected (EMR 4.2.0–6.15.0); Amazon Linux packages in all regions; Bref layers for Lambda.
+  - **Tenable:** SC-202610.2 (TNS-2026-30/31) replaces SC-202610.1.
+- **Smaller updates:**
+  - NVD 109618 is now "Analyzed".
+  - Ivanti Incapptic not impacted (KB 000109797, now read in full).
+  - Rapid7 and Qualys coverage for CVE-2026-115560.
+  - F5 WAF signature file now named `ASM-AttackSignatures_20261022_154742`.
+- **Unchanged:**
+  - QNAP (V1.0), NetApp (v3.0, no patch), Sophos (v4), Citrix (fixes 27 Oct), Akamai, Plesk.
+  - Fortinet, SonicWall, A10, Icinga, Siemens CSAF.
+  - CVE-2026-115560 still has no CVE record, NVD entry or Red Hat VEX.
+  - NCSC-NL: no new commits since 23 Oct 12:50 UTC.
+- **Not verified / not re-read:**
+  - Adobe returned HTTP 403.
+  - The Ivanti Connect Secure and EPMM KBs and the Broadcom detail advisories (39411, 39421, 39429) need a login.
+  - Cacti and LibreNMS are outside the sweep and keep their 23 Oct check times.
+
 ## Update 25 – 23 Oct 2026, 18:24 UTC
 
 Only Check Point re-checked (on request); no other source was re-read.
