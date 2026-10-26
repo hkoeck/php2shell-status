@@ -2,6 +2,25 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
+## Update 28 – 26 Oct 2026, 08:29 UTC
+
+Re-check of all 132 sweep URLs (curl diff 26 Oct 08:17–08:19 UTC against the 25 Oct 15:00 UTC copies of an unpublished intermediate pass), browser-only pages 08:21–08:26 UTC (now diffed against saved full-text copies), feeds and APIs 08:20 UTC. Details in [VERIFICATION.md](VERIFICATION.md#update-28-checks-2526-oct-2026).
+
+- **Scope: non-enterprise rows removed.** aaPanel, HestiaCP, ISPConfig, DirectAdmin, QNAP, Synology, Ubiquiti UISP, FreePBX/Sangoma, GetPageSpeed, Fedora, Debian forky/sid, Arch and Gentoo are no longer tracked (also removed: their scanner QIDs, the Fedora source link, the QNAP entries in key facts and known gaps). Section 6 now holds hosting control panels (Plesk, cPanel), collaboration servers, Alpine and other software. `UPDATE_PROMPT.md` lists the excluded categories.
+- **Unit 42 retracted its exploitation case.** On 25 Oct it withdrew the 23 Oct report of an attack on a European government entity: "We are unable to confirm that initial access is associated with the specific PHP2Shell CVEs." The key-facts bullet now says so. The other exploitation reports (Amazon, watchTowr, Cloudflare, Zscaler) are unchanged.
+- **Palo Alto: 7 of 20 PAN-OS hotfixes released** (`10.2.18-h13`, `11.1.4-h38`, `11.1.6-h40`, `11.1.10-h36`, `11.1.13-h16`, `11.1.16-h4`, `11.2.10-h16`). The rest are due 27–30 Oct. PAN says CVE-2026-115560 does not affect PAN-OS.
+- **NetApp v7.0:** fixes for ONTAP 9.15.1, 9.16.1, 9.17.1, 9.18.1 and 9.19.1 (`…HF1` builds). The advisory status is still *Interim*.
+- **Check Point:** hotfix for Spark Firewalls (R82.00.10 Build 998002823). R82.20 is still "Coming soon"; there is no package for Spark R81.10.x.
+- **Broadcom:** Carbon Black App Control Server is fixed in 8.12.2 and 8.13.2 (public KB 459982).
+- **Ivanti Endpoint Security added:** affected; end of life 31 Dec 2026, Ivanti recommends migration; the mitigation article needs a login.
+- **Trend Micro:** Vision One Container Security and Deep Discovery Director listed as not impacted.
+- **SUSE:** BCI PHP container images now have fixed version tags (`8.3.36-28.14` / `-28.15`).
+- **ownCloud and Cleo Streem added:** fixed ownCloud 10/11 Docker images (22 Oct); Cleo Streem patch available through Cleo support (21 Oct).
+- **LibreNMS Docker 26.10.2-r2** disables `session.upload_progress` against CVE-2026-115560.
+- **Late addition:** Surý (sury.org, ondrej PPA) also backported the fix to PHP 5.6, 7.0, 7.1, 7.2 and 7.3 on 21 Oct. It was missing from the row since then.
+- **Corrections:** update 27 dropped the NetApp "*Interim*" status (restored). Qualys QID 39036 (CVE-2026-115560, unauthenticated) was missing from the scanner row. The Cacti/LibreNMS row still showed the 23 Oct check time.
+- Unchanged: F5, HPE, Juniper, Citrix (fix due 27 Oct), Quest (SDA hotfix due 27 Oct), Sophos, Akamai, CloudLinux, Kaseya, CISA KEV / SSVC ("Exploitation: none"), Red Hat VEX, NVD; CVE-2026-115560 still has no CVE record. Adobe again HTTP 403.
+
 ## Update 27 – 24 Oct 2026, 22:06 UTC
 
 Re-check of all 132 sweep URLs (curl diff 21:53–21:56 UTC against the 24 Oct 06:16 UTC copies; the ten update-26 sources against their 06:42 UTC copies), browser-only pages 21:57–22:04 UTC, feeds 21:57 UTC.
