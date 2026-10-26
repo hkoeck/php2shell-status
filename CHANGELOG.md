@@ -18,6 +18,7 @@ Re-check of all 132 sweep URLs (curl diff 26 Oct 08:17–08:19 UTC against the 2
 - **ownCloud and Cleo Streem added:** fixed ownCloud 10/11 Docker images (22 Oct); Cleo Streem patch available through Cleo support (21 Oct).
 - **LibreNMS Docker 26.10.2-r2** disables `session.upload_progress` against CVE-2026-115560.
 - **Late addition:** Surý (sury.org, ondrej PPA) also backported the fix to PHP 5.6, 7.0, 7.1, 7.2 and 7.3 on 21 Oct. It was missing from the row since then.
+- **Correction (same update, follow-up commit):** the Surý row header now says 5.6–8.5 and names Debian 11 / Ubuntu 22.04; Ivanti Endpoint Security is listed as "affected, no fix announced" (it was under "fix in development"); the status line no longer lists OVHcloud (out of scope) as a new source.
 - **Corrections:** update 27 dropped the NetApp "*Interim*" status (restored). Qualys QID 39036 (CVE-2026-115560, unauthenticated) was missing from the scanner row. The Cacti/LibreNMS row still showed the 23 Oct check time.
 - Unchanged: F5, HPE, Juniper, Citrix (fix due 27 Oct), Quest (SDA hotfix due 27 Oct), Sophos, Akamai, CloudLinux, Kaseya, CISA KEV / SSVC ("Exploitation: none"), Red Hat VEX, NVD; CVE-2026-115560 still has no CVE record. Adobe again HTTP 403.
 
