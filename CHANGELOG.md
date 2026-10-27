@@ -2,6 +2,16 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
+## Editorial – 27 Oct 2026, 16:50 UTC
+
+README condensed from about 12,300 to about 5,900 words. **No status changes and no new checks**; the data is still that of update 29 (06:25–06:53 UTC).
+
+- Removed from the README: change history inside rows ("moved from …", earlier wording, corrections), per-source check times (kept in VERIFICATION.md), repeated lists (PAN hotfixes now listed once), long not-affected lists (now a selection plus "full list: advisory").
+- Key facts: CVE-2026-115560 vendor statements moved to their rows; exploitation block shortened to KEV, confirmed shells, attempts, PoCs and "not observed" statements.
+- Known gaps rewritten as a short list by category.
+- Every quote left in the README is a verbatim substring of the update 29 text; all fixed versions, advisory IDs and links to sources were kept, except history-only details.
+- `UPDATE_PROMPT.md`: new rule against re-adding history and check times to the README.
+
 ## Update 29 – 27 Oct 2026, 06:53 UTC
 
 Re-check of all 127 in-scope sweep URLs (curl diff 27 Oct 06:25–06:27 UTC against the 26 Oct 08:17–08:19 UTC copies), browser-only pages 06:33–06:39 UTC (diffed against the saved 26 Oct copies), feeds and APIs 06:28–06:47 UTC, then README quotes matched against today's texts (scope and exceptions in VERIFICATION). Details in [VERIFICATION.md](VERIFICATION.md#update-29-checks-27-oct-2026).
