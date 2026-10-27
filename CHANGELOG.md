@@ -2,6 +2,25 @@
 
 > AI-generated document; see the warning in [README.md](README.md).
 
+## Update 29 – 27 Oct 2026, 06:53 UTC
+
+Re-check of all 127 in-scope sweep URLs (curl diff 27 Oct 06:25–06:27 UTC against the 26 Oct 08:17–08:19 UTC copies), browser-only pages 06:33–06:39 UTC (diffed against the saved 26 Oct copies), feeds and APIs 06:28–06:47 UTC, then every README quote matched against today's texts. Details in [VERIFICATION.md](VERIFICATION.md#update-29-checks-27-oct-2026).
+
+- **CISA KEV: both CVEs added on 26 Oct**, due date 29 Oct (BOD 26-04), forensic triage "Yes". The CISA alert was updated and no longer says CISA has not observed exploitation. CISA SSVC in the CVE record still says "Exploitation: none". CVE-2026-115560 is not in KEV.
+- **Successful exploitation on honeypots:** Adel Karimi's report (24 Oct): 35 shells started by Apache workers on three PHP 8.4.26 `mod_php` honeypots, matching the public PoCs (the report warns this is no measure of reliability elsewhere). Trail of Bits (26 Oct): demo shell on MediaWiki, Symfony, Laravel and phpBB. Zscaler and Sansec softened their wording.
+- **Palo Alto: 11 of 20 PAN-OS hotfixes released** (new: `10.2.13-h27`, `10.2.16-h12`, `12.1.7-h11`, `12.2.4-h1`); 9 still due 27–30 Oct. New suggested-solution table; the separate Node.js Brotli CVE is fixed in the same hotfixes except `11.2.10-h16`. Cortex Cloud and Koi not affected.
+- **Check Point: gaps closed.** R82.20 hotfix (also for 3900 appliances) and Spark R81.10.17 Build 996004992 released; hotfixes now support Standalone; new deploy steps (remove the manual mitigation first). The Spark R82.00.x package is now labelled R82.00.11 (same build 998002823).
+- **NetApp v9.0:** ONTAP 9.14.1P18HF1 added (six lines fixed); workaround steps moved to a KB that needs a login; NetApp recommends upgrading instead of workarounds.
+- **F5:** engineering hotfixes for BIG-IP 17.5.1.10 and 17.1.3.6 carry the PHP fix.
+- **Citrix:** security bulletin CTX697263 (created 22 Oct, first listed in the KB search on 27 Oct): NetScaler ADC / Gateway impacted, 14 other Citrix products not impacted. Fix still due 27 Oct, not out at 06:39 UTC.
+- **Cisco v1.7:** Expressway fix 15.5.21 no longer "TBD"; under investigation down from 11 to 4 products.
+- **New Splunk row:** investigation complete, all products unaffected, Smartlook remedied.
+- **Other changes:** Fortinet (FortiClient Cloud Services remediated), WatchGuard (final "none affected" plus IPS signatures, also in section 2), Barracuda (Security Awareness Training remediated), Broadcom (KB 459989 rewritten; CASMA under investigation, CAS not vulnerable), Trend Micro (Apex Central / Apex One Critical Patch ETA 11 Nov), Juniper (Apstra not vulnerable), Siemens (SSA-566435 v2, new SSA-166980), Kaseya (Autotask PSA, Datto RMM, Endpoint Backup V2 fully patched), Red Hat (RHSA-2026:89111, 9.6 EUS php:8.3), CIQ (LTS 9.2 php:8.2/8.3), SUSE Liberty 9.6 EMS, Qualys (new web-app QIDs, one intrusive), Azure WAF (request size guidance), Laravel Forge (upload progress off on new servers).
+- **CloudLinux contradiction resolved:** the KB now also says to keep `php-els` enabled; `alt-php-internal` fixed in 8.2.35-1.
+- **Late additions (missed since 21–22 Oct):** PHP regression php-src #24488 in 8.4.27 / 8.5.12 (SimpleXML GC double free; fix committed 22 Oct, not released). Also noted: the PHP Windows `-1` builds of 26 Oct fix a separate Brotli CVE, not PHP2Shell.
+- **Corrections:** removed vendor text no longer quoted as current (CISA "not observed", Broadcom VMware list, NetApp workaround text, Laravel Forge instructions, Sansec and Zscaler wording); Citrix Tech Zone quote completed; Trend Micro ETA quote reformatted to the source; the earlier "No CTX bulletin found" removed.
+- Unchanged: Unit 42, Amazon, watchTowr, Sophos, HPE, Quest (SDA hotfix due 27 Oct), Akamai, Plesk, Cacti / LibreNMS; NCSC-NL no new commit. Not re-read: Adobe (HTTP 403), login-gated Ivanti / Broadcom KBs and the NetApp KB steps, Juniper portal search, Surý, Fortinet IPS encyclopedia, Upsun incident text.
+
 ## Update 28 – 26 Oct 2026, 08:29 UTC
 
 Re-check of all 132 sweep URLs (curl diff 26 Oct 08:17–08:19 UTC against the 25 Oct 15:00 UTC copies of an unpublished intermediate pass), browser-only pages 08:21–08:26 UTC (now diffed against saved full-text copies), feeds and APIs 08:20 UTC. Details in [VERIFICATION.md](VERIFICATION.md#update-28-checks-2526-oct-2026).

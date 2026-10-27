@@ -59,5 +59,6 @@ Pages behind bot protection (Cloudflare/Akamai: Zabbix forum, Sophos, Broadcom, 
 ## When you are done
 
 - Update the status line (date, UTC time, update number + 1)
+- Match every `"…"` quote in README.md against the text you downloaded in this pass. If a source removed or reworded the text, say so ("removed on …") instead of keeping it as current wording
 - Add a `CHANGELOG.md` entry at the top: what changed, what was corrected, what is still not verified
 - Report back: a summary of changes plus a list of everything you could **not** verify, with the reason
