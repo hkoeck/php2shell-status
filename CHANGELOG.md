@@ -9,7 +9,7 @@ README condensed from about 12,300 to about 5,900 words. **No status changes and
 - Removed from the README: change history inside rows ("moved from …", earlier wording, corrections), per-source check times (kept in VERIFICATION.md), repeated lists (PAN hotfixes now listed once), long not-affected lists (now a selection plus "full list: advisory").
 - Key facts: CVE-2026-115560 vendor statements moved to their rows; exploitation block shortened to KEV, confirmed shells, attempts, PoCs and "not observed" statements.
 - Known gaps rewritten as a short list by category.
-- Every quote left in the README is a verbatim substring of the update 29 text; all fixed versions, advisory IDs and links to sources were kept, except history-only details.
+- Every quote left in the README is a verbatim substring of the update 29 text; fixed versions, advisory IDs and source links were kept, except history-only details, the per-distribution Qualys QIDs (see the Qualys blog) and the full not-affected lists.
 - `UPDATE_PROMPT.md`: new rule against re-adding history and check times to the README.
 
 ## Update 29 – 27 Oct 2026, 06:53 UTC
